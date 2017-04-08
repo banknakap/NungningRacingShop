@@ -60,5 +60,5 @@
         <asp:TextBox ID="txtAddress" TextMode="multiline" Columns="50" Rows="5" CssClass="form-control" runat="server"></asp:TextBox>
     </div>
 
-       <asp:Button ID="btnSend" runat="server" Text="สมัครสมาชิก" ValidationGroup="RegisterGold" CssClass="btn btn-danger btn-lg submit-btn" OnClick="btnSend_Click" />
+       <asp:Button ID="btnSend" runat="server" Text="สมัครสมาชิก" ValidationGroup="RegisterGold" CssClass="btn btn-success btn-lg submit-btn" OnClick="btnSend_Click" />
 </asp:Content>

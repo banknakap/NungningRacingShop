@@ -11,13 +11,13 @@ namespace Nungning.BLL.Controller
 {
     public class UserController
     {
-        
-
-        public static List<UserInfo> GetUserByLogin(string user_name , string password)
+        public static UserInfo GetUserByLogin(string user_name , string password)
         {
-            //return DataProvider.Instance().GetUserByLogin(user_name, password);
-
-            return CBO.FillCollection<UserInfo>(DataProvider.Instance().GetUserByLogin(user_name, password));
+            return CBO.FillObject<UserInfo>(DataProvider.Instance().GetUserByLogin(user_name, password));
+        }
+        public static List<UserInfo> AddUser(UserInfo user)
+        {
+            return CBO.FillCollection<UserInfo>(DataProvider.Instance().AddUser(user));
         }
     }
 }

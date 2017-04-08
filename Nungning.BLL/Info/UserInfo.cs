@@ -15,11 +15,12 @@ namespace Nungning.BLL.Info
         public string user_type { get; set; }
         public string first_name { get; set; }
         public string last_name { get; set; }
-        public string gender { get; set; }
+        public int gender { get; set; }
         public string address { get; set; }
-        public string create_date { get; set; }
+        public DateTime create_date { get; set; }
         public string create_by { get; set; }
-        public string lastupdate_date { get; set; }
+        public DateTime lastupdate_date { get; set; }
+        public string lastupdate_by { get; set; }
 
     }
 }

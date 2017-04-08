@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data;
-
+using Nungning.BLL.Info;
 
 namespace Nungning.BLL.Provider
 {
@@ -74,7 +74,7 @@ namespace Nungning.BLL.Provider
 
         #region User
         public abstract IDataReader GetUserByLogin(string user_name, string password);
-
+        public abstract IDataReader AddUser(UserInfo user);
         #endregion
 
     }

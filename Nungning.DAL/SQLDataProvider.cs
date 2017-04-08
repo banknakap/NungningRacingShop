@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Data;
 using Nungning.BLL.Provider;
 using Microsoft.ApplicationBlocks.Data;
+using Nungning.BLL.Info;
 
 namespace Nungning.DAL
 {
@@ -135,6 +136,23 @@ namespace Nungning.DAL
         {
             return SqlHelper.ExecuteReader(ConnectionString, GetFullyQualifiedName("usp_User_GetUserByLogin"),GetNull(user_name),GetNull(password));
         }
+        public override IDataReader AddUser(UserInfo user)
+        {
+            return SqlHelper.ExecuteReader(ConnectionString, GetFullyQualifiedName("usp_User_AddUser")
+                , GetNull(user.user_name)
+                , GetNull(user.password)
+                , GetNull(user.user_type)
+                , GetNull(user.first_name)
+                , GetNull(user.last_name)
+                , GetNull(user.gender)
+                , GetNull(user.address)
+                , GetNull(user.create_date)
+                , GetNull(user.create_by)
+                , GetNull(user.lastupdate_date)
+                , GetNull(user.lastupdate_by)
+                );
+        }
+        
         #endregion
 
 

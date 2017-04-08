@@ -1,4 +1,5 @@
 ﻿using Nungning.BLL.Controller;
+using Nungning.BLL.Info;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,11 +22,42 @@ namespace NungningRacingShop.Authentication
         {
             try
             {
-
+                string resultValidate = Onvalidate();
+                if (string.IsNullOrEmpty(resultValidate))
+                {
+                    register();
+                }
+                else
+                    ShowMessage(Page,resultValidate);
             }
             catch (Exception ex)
             {
 
+            }
+        }
+
+        private void register()
+        {
+            UserInfo user_info = new UserInfo();
+            user_info.user_type = "General";
+            user_info.user_name = txtUserName.Text;
+            user_info.password = txtPassword.Text;
+            user_info.first_name = txtFirstName.Text;
+            user_info.last_name = txtLastName.Text;
+            user_info.gender = (rdoMale.Checked) ? 0 : 1;
+            user_info.address = txtAddress.Text;
+            user_info.create_by = txtUserName.Text;
+            user_info.create_date = DateTime.Now;
+            user_info.lastupdate_by = txtUserName.Text;
+            user_info.lastupdate_date = DateTime.Now;
+            var result = UserController.AddUser(user_info);
+            if (result.Count==0)
+            {
+                ShowMessage(Page,"UserName มีอยู่ในระบบแล้ว");
+            }
+            else
+            {
+                ShowMessage(Page, "สมัครสมาชิกสำเร็จ");
             }
         }
 
@@ -35,7 +67,7 @@ namespace NungningRacingShop.Authentication
             string errMsg = "";
             if (string.IsNullOrEmpty(txtUserName.Text)) { errMsg = "กรุณาระบุ User Name"; return errMsg; }
             if (string.IsNullOrEmpty(txtPassword.Text)) { errMsg = "กรุณาระบุ Password"; return errMsg; }
-            if (string.IsNullOrEmpty(txtRepassword.Text)) { errMsg = "กรุณาระบุ Password"; return errMsg; }
+            if (string.IsNullOrEmpty(txtRepassword.Text)) { errMsg = "กรุณาระบุ Re-Password"; return errMsg; }
             if (string.IsNullOrEmpty(txtFirstName.Text)) { errMsg = "กรุณาระบุ ชื่อ"; return errMsg; }
             if (string.IsNullOrEmpty(txtLastName.Text)) { errMsg = "กรุณาระบุ นามสกุล"; return errMsg; }
             if (string.IsNullOrEmpty(txtAddress.Text)) { errMsg = "กรุณาระบุ ที่อยู่"; return errMsg; }
