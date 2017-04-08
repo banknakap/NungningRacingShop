@@ -21,11 +21,11 @@ namespace NungningRacingShop.Authentication
         {
             try
             {
-                
+
             }
             catch (Exception ex)
             {
-     
+
             }
         }
 
@@ -41,4 +41,5 @@ namespace NungningRacingShop.Authentication
             if (string.IsNullOrEmpty(txtAddress.Text)) { errMsg = "กรุณาระบุ ที่อยู่"; return errMsg; }
             return errMsg;
         }
+    }
 }
