@@ -59,4 +59,6 @@
         <label>ที่อยู่: <span class="red">*</span> </label>
         <asp:TextBox ID="txtAddress" TextMode="multiline" Columns="50" Rows="5" CssClass="form-control" runat="server"></asp:TextBox>
     </div>
+
+       <asp:Button ID="btnSend" runat="server" Text="สมัครสมาชิก" ValidationGroup="RegisterGold" CssClass="btn btn-danger btn-lg submit-btn" OnClick="btnSend_Click" />
 </asp:Content>

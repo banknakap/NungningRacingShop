@@ -2,3 +2,4 @@ C:\OutSource\NungningRacingShop\NungningUtility\bin\Debug\NungningUtility.dll
 C:\OutSource\NungningRacingShop\NungningUtility\bin\Debug\NungningUtility.pdb
 C:\OutSource\NungningRacingShop\NungningUtility\obj\Debug\NungningUtility.dll
 C:\OutSource\NungningRacingShop\NungningUtility\obj\Debug\NungningUtility.pdb
+C:\OutSource\NungningRacingShop\NungningUtility\obj\Debug\NungningUtility.csprojResolveAssemblyReference.cache
