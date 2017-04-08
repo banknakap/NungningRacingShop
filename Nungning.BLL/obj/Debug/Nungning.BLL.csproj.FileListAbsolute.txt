@@ -1,0 +1,7 @@
+C:\OutSource\NungningRacingShop\Nungning.BLL\bin\Debug\Nungning.BLL.dll
+C:\OutSource\NungningRacingShop\Nungning.BLL\bin\Debug\Nungning.BLL.pdb
+C:\OutSource\NungningRacingShop\Nungning.BLL\obj\Debug\Nungning.BLL.csprojResolveAssemblyReference.cache
+C:\OutSource\NungningRacingShop\Nungning.BLL\obj\Debug\Nungning.BLL.dll
+C:\OutSource\NungningRacingShop\Nungning.BLL\obj\Debug\Nungning.BLL.pdb
+C:\OutSource\NungningRacingShop\Nungning.BLL\bin\Debug\NungningUtility.dll
+C:\OutSource\NungningRacingShop\Nungning.BLL\bin\Debug\NungningUtility.pdb

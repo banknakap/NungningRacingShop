@@ -1,0 +1,131 @@
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\ApplicationInsights.config
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\roslyn\csc.exe
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\roslyn\csc.exe.config
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\roslyn\csc.rsp
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\roslyn\csi.exe
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\roslyn\csi.rsp
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\roslyn\Microsoft.CodeAnalysis.dll
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\roslyn\Microsoft.CSharp.Core.targets
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\roslyn\Microsoft.VisualBasic.Core.targets
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\roslyn\System.AppContext.dll
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\roslyn\System.Collections.Immutable.dll
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\roslyn\System.Diagnostics.StackTrace.dll
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\roslyn\System.IO.FileSystem.dll
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\roslyn\System.IO.FileSystem.Primitives.dll
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\roslyn\System.Reflection.Metadata.dll
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\roslyn\vbc.exe
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\roslyn\vbc.exe.config
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\roslyn\vbc.rsp
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\roslyn\VBCSCompiler.exe
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\roslyn\VBCSCompiler.exe.config
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\NungningRacingShop.dll.config
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\NungningRacingShop.dll
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\NungningRacingShop.pdb
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\Antlr3.Runtime.dll
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\AspNet.ScriptManager.bootstrap.dll
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\AspNet.ScriptManager.jQuery.dll
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\Microsoft.AI.Agent.Intercept.dll
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\Microsoft.AI.DependencyCollector.dll
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\Microsoft.AI.PerfCounterCollector.dll
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\Microsoft.AI.ServerTelemetryChannel.dll
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\Microsoft.AI.Web.dll
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\Microsoft.AI.WindowsServer.dll
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\Microsoft.ApplicationInsights.dll
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\Microsoft.AspNet.FriendlyUrls.dll
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\Microsoft.ScriptManager.MSAjax.dll
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\Microsoft.ScriptManager.WebForms.dll
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\Microsoft.Web.Infrastructure.dll
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\Newtonsoft.Json.dll
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\System.Web.Optimization.dll
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\WebGrease.dll
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\System.Web.Optimization.xml
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\Antlr3.Runtime.pdb
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\Microsoft.AspNet.FriendlyUrls.xml
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\Newtonsoft.Json.xml
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\Microsoft.ApplicationInsights.xml
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\Microsoft.AI.DependencyCollector.xml
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\Microsoft.AI.ServerTelemetryChannel.xml
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\Microsoft.AI.WindowsServer.xml
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\bin\Microsoft.AI.Web.xml
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\obj\Debug\NungningRacingShop.csprojResolveAssemblyReference.cache
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\obj\Debug\NungningRacingShop.dll
+c:\users\freezecross\documents\visual studio 2017\Projects\NungningRacingShop\NungningRacingShop\obj\Debug\NungningRacingShop.pdb
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\ApplicationInsights.config
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\roslyn\csc.exe
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\roslyn\csc.exe.config
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\roslyn\csc.rsp
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\roslyn\csi.exe
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\roslyn\csi.rsp
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\roslyn\System.AppContext.dll
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\roslyn\System.Collections.Immutable.dll
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\roslyn\System.IO.FileSystem.dll
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\roslyn\System.Reflection.Metadata.dll
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\roslyn\vbc.exe
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\roslyn\vbc.exe.config
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\roslyn\vbc.rsp
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\roslyn\VBCSCompiler.exe
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\roslyn\VBCSCompiler.exe.config
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\NungningRacingShop.dll.config
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\NungningRacingShop.dll
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\NungningRacingShop.pdb
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\Antlr3.Runtime.dll
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\AspNet.ScriptManager.bootstrap.dll
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\AspNet.ScriptManager.jQuery.dll
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\Microsoft.AI.Agent.Intercept.dll
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\Microsoft.AI.DependencyCollector.dll
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\Microsoft.AI.Web.dll
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\Microsoft.AI.WindowsServer.dll
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\Microsoft.ApplicationInsights.dll
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\Microsoft.AspNet.FriendlyUrls.dll
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\Microsoft.ScriptManager.MSAjax.dll
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\Microsoft.ScriptManager.WebForms.dll
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\Microsoft.Web.Infrastructure.dll
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\Newtonsoft.Json.dll
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\System.Web.Optimization.dll
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\WebGrease.dll
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\System.Web.Optimization.xml
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\Antlr3.Runtime.pdb
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\Microsoft.AspNet.FriendlyUrls.xml
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\Newtonsoft.Json.xml
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\Microsoft.ApplicationInsights.xml
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\Microsoft.AI.DependencyCollector.xml
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\Microsoft.AI.WindowsServer.xml
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\Microsoft.AI.Web.xml
+C:\OutSource\NungningRacingShop\NungningRacingShop\obj\Debug\NungningRacingShop.dll
+C:\OutSource\NungningRacingShop\NungningRacingShop\obj\Debug\NungningRacingShop.pdb
+C:\OutSource\NungningRacingShop\NungningRacingShop\obj\Debug\NungningRacingShop.csprojResolveAssemblyReference.cache
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\Nungning.BLL.dll
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\Nungning.DAL.dll
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\Nungning.BLL.pdb
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\Nungning.DAL.pdb
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\NungningUtility.dll
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\NungningUtility.pdb
+C:\OutSource\NungningRacingShop\NungningRacingShop\bin\Microsoft.ApplicationBlocks.Data.dll

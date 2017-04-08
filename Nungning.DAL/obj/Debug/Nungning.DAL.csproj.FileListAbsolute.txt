@@ -1,0 +1,10 @@
+C:\OutSource\NungningRacingShop\Nungning.DAL\bin\Debug\Nungning.DAL.dll
+C:\OutSource\NungningRacingShop\Nungning.DAL\bin\Debug\Nungning.DAL.pdb
+C:\OutSource\NungningRacingShop\Nungning.DAL\obj\Debug\Nungning.DAL.dll
+C:\OutSource\NungningRacingShop\Nungning.DAL\obj\Debug\Nungning.DAL.pdb
+C:\OutSource\NungningRacingShop\Nungning.DAL\bin\Debug\Microsoft.ApplicationBlocks.Data.dll
+C:\OutSource\NungningRacingShop\Nungning.DAL\bin\Debug\Nungning.BLL.dll
+C:\OutSource\NungningRacingShop\Nungning.DAL\bin\Debug\NungningUtility.dll
+C:\OutSource\NungningRacingShop\Nungning.DAL\bin\Debug\Nungning.BLL.pdb
+C:\OutSource\NungningRacingShop\Nungning.DAL\bin\Debug\NungningUtility.pdb
+C:\OutSource\NungningRacingShop\Nungning.DAL\obj\Debug\Nungning.DAL.csprojResolveAssemblyReference.cache
