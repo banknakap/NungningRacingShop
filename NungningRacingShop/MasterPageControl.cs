@@ -7,7 +7,7 @@ using System.Web.UI;
 
 namespace NungningRacingShop
 {
-    public class MasterPageControl : Page
+    public abstract class MasterPageControl : Page
     {
         public static UserInfo user_info
         {
@@ -22,6 +22,7 @@ namespace NungningRacingShop
         }
 
 
+
         public static void ShowMessage(Page page, string message, string redirectUrl = null)
         {
             page.ClientScript.RegisterStartupScript(page.GetType(),"JSSCRIPT", string.Format("<script> alert('{0}');{1}", message.Replace("'", "\\'"), !string.IsNullOrEmpty(redirectUrl) ? "window.location = '" + redirectUrl + "';</script>" : "</script>"));
@@ -31,9 +32,10 @@ namespace NungningRacingShop
         {
             base.OnLoad(e);
 
-            if (user_info==null)
+            if (user_info == null)
             {
-
+                string path = HttpContext.Current.Request.Url.AbsolutePath;
+                //RedirectTo("~/Default.aspx");
             }
         }
 

@@ -38,11 +38,7 @@ namespace NungningRacingShop.Authentication
             if (user != null)
             {
                 user_info = user;
-                //ShowMessage(Page, "Login สำเร็จ", "/NungningRacingShop");
-
-               var ff = HttpContext.Current.Server.MapPath("~/Authentication/Register");
-                
-                RedirectTo("http://localhost/NungningRacingShop/");
+                RedirectTo("~/Default.aspx");
             }
             else
             {
@@ -58,6 +54,8 @@ namespace NungningRacingShop.Authentication
             if (string.IsNullOrEmpty(txtPassword.Text)) { errMsg = "กรุณาระบุ Password"; return errMsg; }
             return errMsg;
         }
+
+
     }
 
    
