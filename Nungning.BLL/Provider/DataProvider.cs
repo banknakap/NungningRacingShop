@@ -42,7 +42,7 @@ namespace Nungning.BLL.Provider
                     );
 
 
-   
+
 
         }
 
@@ -75,6 +75,13 @@ namespace Nungning.BLL.Provider
         #region User
         public abstract IDataReader GetUserByLogin(string user_name, string password);
         public abstract IDataReader AddUser(UserInfo user);
+
+        #endregion
+
+        #region Product
+        public abstract IDataReader AddProduct(ProductInfo pro);
+        public abstract IDataReader AddProductCategory(ProductCategoryInfo pcate);
+        public abstract IDataReader GetProductCategory(string product_category_id);
         #endregion
 
     }

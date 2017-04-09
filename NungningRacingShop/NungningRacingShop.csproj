@@ -128,6 +128,9 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="Authentication\Login.aspx" />
+    <Content Include="Backend\Product\ProductAdd.aspx" />
+    <Content Include="Backend\Product\ProductCategoryAdd.aspx" />
+    <Content Include="Backend\Product\ProductList.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -142,6 +145,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Backend\Backend.Master" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Authentication\Register.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -194,6 +198,34 @@
     </Compile>
     <Compile Include="Authentication\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Backend\Backend.Master.cs">
+      <DependentUpon>Backend.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Backend\Backend.Master.designer.cs">
+      <DependentUpon>Backend.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Backend\Product\ProductAdd.aspx.cs">
+      <DependentUpon>ProductAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Backend\Product\ProductAdd.aspx.designer.cs">
+      <DependentUpon>ProductAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Backend\Product\ProductCategoryAdd.aspx.cs">
+      <DependentUpon>ProductCategoryAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Backend\Product\ProductCategoryAdd.aspx.designer.cs">
+      <DependentUpon>ProductCategoryAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Backend\Product\ProductList.aspx.cs">
+      <DependentUpon>ProductList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Backend\Product\ProductList.aspx.designer.cs">
+      <DependentUpon>ProductList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
@@ -248,7 +280,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Backend\" />
     <Folder Include="Controller\" />
   </ItemGroup>
   <ItemGroup>

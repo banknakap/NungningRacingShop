@@ -152,8 +152,42 @@ namespace Nungning.DAL
                 , GetNull(user.lastupdate_by)
                 );
         }
+
+
+        #endregion
+
+        #region product
+        public override IDataReader AddProduct(ProductInfo pro)
+        {
+            return SqlHelper.ExecuteReader(ConnectionString, GetFullyQualifiedName("usp_Product_AddProduct")
+                , GetNull(pro.title)
+                , GetNull(pro.description)
+                , GetNull(pro.product_category_id)
+                , GetNull(pro.price)
+                , GetNull(pro.amount)
+                , GetNull(pro.create_by)
+                );
+        }
+
+        public override IDataReader AddProductCategory(ProductCategoryInfo pcate)
+        {
+            return SqlHelper.ExecuteReader(ConnectionString, GetFullyQualifiedName("usp_Product_AddProductCategory")
+                , GetNull(pcate.title)
+                , GetNull(pcate.description)
+                , GetNull(pcate.create_by)
+                );
+        }
+
+        public override IDataReader GetProductCategory(string product_category_id)
+        {
+            return SqlHelper.ExecuteReader(ConnectionString, GetFullyQualifiedName("usp_Product_GetProductCategory")
+                , GetNull(product_category_id)
+                );
+        }
+
         
         #endregion
+
 
 
 
