@@ -134,7 +134,7 @@ namespace Nungning.DAL
         #region user
         public override IDataReader GetUserByLogin(string user_name, string password)
         {
-            return SqlHelper.ExecuteReader(ConnectionString, GetFullyQualifiedName("usp_User_GetUserByLogin"),GetNull(user_name),GetNull(password));
+            return SqlHelper.ExecuteReader(ConnectionString, GetFullyQualifiedName("usp_User_GetUserByLogin"), GetNull(user_name), GetNull(password));
         }
         public override IDataReader AddUser(UserInfo user)
         {
@@ -169,12 +169,35 @@ namespace Nungning.DAL
                 );
         }
 
+        public override IDataReader AddProductImage(ProductImageInfo proimage)
+        {
+            return SqlHelper.ExecuteReader(ConnectionString, GetFullyQualifiedName("usp_Product_AddProductImage")
+                , GetNull(proimage.product_id)
+                , GetNull(proimage.image)
+                , GetNull(proimage.create_by)
+                );
+        }
+
+
         public override IDataReader AddProductCategory(ProductCategoryInfo pcate)
         {
             return SqlHelper.ExecuteReader(ConnectionString, GetFullyQualifiedName("usp_Product_AddProductCategory")
                 , GetNull(pcate.title)
                 , GetNull(pcate.description)
                 , GetNull(pcate.create_by)
+                );
+        }
+        public override IDataReader GetProduct(string product_id, string product_category_id)
+        {
+            return SqlHelper.ExecuteReader(ConnectionString, GetFullyQualifiedName("usp_Product_GetProduct")
+                , GetNull(product_id)
+                , GetNull(product_category_id)
+                );
+        }
+        public override IDataReader GetProductImage(string product_id)
+        {
+            return SqlHelper.ExecuteReader(ConnectionString, GetFullyQualifiedName("usp_Product_GetProductImage")
+                , GetNull(product_id)
                 );
         }
 
@@ -185,7 +208,48 @@ namespace Nungning.DAL
                 );
         }
 
-        
+    
+
+        public override IDataReader SetProduct(ProductInfo pro)
+        {
+            return SqlHelper.ExecuteReader(ConnectionString, GetFullyQualifiedName("usp_Product_SetProduct")
+                , GetNull(pro.product_id)
+                , GetNull(pro.title)
+                , GetNull(pro.description)
+                , GetNull(pro.product_category_id)
+                , GetNull(pro.price)
+                , GetNull(pro.amount)
+                , GetNull(pro.display_sort)
+                , GetNull(pro.lastupdate_by)
+                , GetNull(pro.is_del)
+                );
+        }
+
+        public override IDataReader SetProductCategory(ProductCategoryInfo pcate)
+        {
+            return SqlHelper.ExecuteReader(ConnectionString, GetFullyQualifiedName("usp_Product_SetProductCategory")
+                , GetNull(pcate.product_category_id)
+                , GetNull(pcate.title)
+                , GetNull(pcate.description)
+                , GetNull(pcate.display_sort)
+                , GetNull(pcate.lastupdate_by)
+                , GetNull(pcate.is_del)
+                );
+        }
+
+        public override IDataReader SetProductImage(ProductImageInfo proimage)
+        {
+            return SqlHelper.ExecuteReader(ConnectionString, GetFullyQualifiedName("usp_Product_SetProductImage")
+                , GetNull(proimage.image_id)
+                , GetNull(proimage.product_id)
+                , GetNull(proimage.image)
+                , GetNull(proimage.display_sort)
+                , GetNull(proimage.lastupdate_by)
+                , GetNull(proimage.is_del)
+                );
+        }
+
+
         #endregion
 
 

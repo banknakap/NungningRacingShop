@@ -15,6 +15,14 @@ namespace Nungning.BLL.Controller
         {
             return CBO.FillObject<ProductInfo>(DataProvider.Instance().AddProduct(pro));
         }
+        public static ProductImageInfo AddProductImage(string product_id,string image,string create_by)
+        {
+            ProductImageInfo proimage = new ProductImageInfo();
+            proimage.product_id = product_id;
+            proimage.image = image;
+            proimage.create_by = create_by;
+            return CBO.FillObject<ProductImageInfo>(DataProvider.Instance().AddProductImage(proimage));
+        }
         public static ProductCategoryInfo AddProductCategory(ProductCategoryInfo procate)
         {
             return CBO.FillObject<ProductCategoryInfo>(DataProvider.Instance().AddProductCategory(procate));
@@ -22,6 +30,52 @@ namespace Nungning.BLL.Controller
         public static List<ProductCategoryInfo> GetProductCategory(string product_category_id)
         {
             return CBO.FillCollection<ProductCategoryInfo>(DataProvider.Instance().GetProductCategory(product_category_id));
+        }
+
+        public static List<ProductInfo> GetProduct(string product_id,string product_category_id)
+        {
+            return CBO.FillCollection<ProductInfo>(DataProvider.Instance().GetProduct(product_id,product_category_id));
+        }
+
+        public static List<ProductImageInfo> GetProductImage(string product_id)
+        {
+            return CBO.FillCollection<ProductImageInfo>(DataProvider.Instance().GetProductImage(product_id));
+        }
+        public static ProductInfo SetProduct(ProductInfo pro)
+        {
+            return CBO.FillObject<ProductInfo>(DataProvider.Instance().SetProduct(pro));
+        }
+        public static ProductImageInfo SetProductImage(ProductImageInfo proi)
+        {
+            return CBO.FillObject<ProductImageInfo>(DataProvider.Instance().SetProductImage(proi));
+        }
+        public static ProductCategoryInfo SetProductCategory(ProductCategoryInfo proc)
+        {
+            return CBO.FillObject<ProductCategoryInfo>(DataProvider.Instance().SetProductCategory(proc));
+        }
+
+        public static ProductCategoryInfo DelProductCategory(string product_category_id,bool is_del)
+        {
+            var result = GetProductCategory(product_category_id);
+            if (result.Count == 1)
+            {
+                result[0].is_del = is_del;
+                return CBO.FillObject<ProductCategoryInfo>(DataProvider.Instance().SetProductCategory(result[0]));
+            }
+            else
+                return null;
+        }
+
+        public static ProductInfo DelProduct(string product_id, bool is_del)
+        {
+            var result = GetProduct(product_id,null);
+            if (result.Count == 1)
+            {
+                result[0].is_del = is_del;
+                return CBO.FillObject<ProductInfo>(DataProvider.Instance().SetProduct(result[0]));
+            }
+            else
+                return null;
         }
     }
 }

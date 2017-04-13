@@ -43,6 +43,7 @@
     <Compile Include="Controller\ProductController.cs" />
     <Compile Include="Controller\UserController.cs" />
     <Compile Include="Info\ProductCategoryInfo.cs" />
+    <Compile Include="Info\ProductImageInfo.cs" />
     <Compile Include="Info\ProductInfo.cs" />
     <Compile Include="Info\UserInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

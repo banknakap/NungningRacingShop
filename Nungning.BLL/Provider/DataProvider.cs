@@ -80,8 +80,14 @@ namespace Nungning.BLL.Provider
 
         #region Product
         public abstract IDataReader AddProduct(ProductInfo pro);
+        public abstract IDataReader AddProductImage(ProductImageInfo proimage);
         public abstract IDataReader AddProductCategory(ProductCategoryInfo pcate);
+        public abstract IDataReader GetProduct(string product_id, string product_category_id);
+        public abstract IDataReader GetProductImage(string product_id);
         public abstract IDataReader GetProductCategory(string product_category_id);
+        public abstract IDataReader SetProduct(ProductInfo pro);
+        public abstract IDataReader SetProductCategory(ProductCategoryInfo pcate);
+        public abstract IDataReader SetProductImage(ProductImageInfo proimage);
         #endregion
 
     }

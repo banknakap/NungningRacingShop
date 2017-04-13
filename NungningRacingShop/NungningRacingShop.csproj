@@ -130,6 +130,8 @@
     <Content Include="Authentication\Login.aspx" />
     <Content Include="Backend\Product\ProductAdd.aspx" />
     <Content Include="Backend\Product\ProductCategoryAdd.aspx" />
+    <Content Include="Backend\Product\ProductCategoryEdit.aspx" />
+    <Content Include="Backend\Product\ProductEdit.aspx" />
     <Content Include="Backend\Product\ProductList.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
@@ -220,6 +222,20 @@
     <Compile Include="Backend\Product\ProductCategoryAdd.aspx.designer.cs">
       <DependentUpon>ProductCategoryAdd.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Backend\Product\ProductCategoryEdit.aspx.cs">
+      <DependentUpon>ProductCategoryEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Backend\Product\ProductCategoryEdit.aspx.designer.cs">
+      <DependentUpon>ProductCategoryEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Backend\Product\ProductEdit.aspx.cs">
+      <DependentUpon>ProductEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Backend\Product\ProductEdit.aspx.designer.cs">
+      <DependentUpon>ProductEdit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Backend\Product\ProductList.aspx.cs">
       <DependentUpon>ProductList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -281,6 +297,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controller\" />
+    <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

@@ -9,13 +9,26 @@ using System.Web.UI.WebControls;
 
 namespace NungningRacingShop.Backend.Product
 {
-    public partial class ProductAdd : MasterPageControl
+    public partial class ProductEdit : MasterPageControl
     {
+        private string product_id
+        {
+            set
+            {
+                ViewState["product_id"] = value;
+            }
+            get
+            {
+                return (string)ViewState["product_id"];
+            }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
+            product_id = Request.QueryString["product_id"];
             if (!IsPostBack)
             {
                 bindDllCategoryProduct();
+                bindProduct();
             }
 
         }
@@ -31,6 +44,19 @@ namespace NungningRacingShop.Backend.Product
 
 
         }
+        private void bindProduct()
+        {
+            var result = ProductController.GetProduct(product_id, null);
+            if (result.Count == 1)
+            {
+                txtTitle.Text = result[0].title;
+                txtDesciption.Text = result[0].description;
+                txtPrice.Text = result[0].price.ToString();
+                txtAmount.Text = result[0].amount.ToString();
+                ddlCategory.SelectedValue = result[0].product_category_id;
+            }
+
+        }
 
         protected void btnSend_Click(object sender, EventArgs e)
         {
@@ -39,7 +65,7 @@ namespace NungningRacingShop.Backend.Product
                 string resultValidate = Onvalidate();
                 if (string.IsNullOrEmpty(resultValidate))
                 {
-                    addProduct();
+                    setProduct();
                 }
                 else
                     ShowMessage(Page, resultValidate);
@@ -50,34 +76,38 @@ namespace NungningRacingShop.Backend.Product
             }
         }
 
-        private void addProduct()
+        private void setProduct()
         {
             ProductInfo pro = new ProductInfo();
+            pro.product_id = product_id;
             pro.title = txtTitle.Text;
             pro.description = txtDesciption.Text;
             pro.price = float.Parse(txtPrice.Text);
             pro.amount = int.Parse(txtAmount.Text);
             pro.product_category_id = ddlCategory.SelectedValue;
-            pro.create_by = (user_info == null) ? "No Login" : user_info.user_name;
-            var result = ProductController.AddProduct(pro);
+            pro.lastupdate_by = (user_info == null) ? "No Login" : user_info.user_name;
+            var result = ProductController.SetProduct(pro);
 
             if (result == null)
             {
-                ShowMessage(Page, "ชื่อสินค้าในหมวดหมู่นี้มีอยู่ในระบบแล้ว");
+                ShowMessage(Page, "แก้ไขผิดพลาด");
             }
             else
             {
 
-                foreach (var current in fileImage.PostedFiles)
+                if (fileImage.HasFiles)
                 {
-                    string exttension = System.IO.Path.GetExtension(current.FileName);
-                    string newNameImage = Guid.NewGuid().ToString();
-                    current.SaveAs(System.IO.Path.Combine(Server.MapPath("~/Images/"), newNameImage+ exttension));
-                    listofuploadedfiles.Text += String.Format("{0}<br />", newNameImage + exttension);
-                    
-                    ProductController.AddProductImage(result.product_id, newNameImage+ exttension, result.create_by);
+                    foreach (var current in fileImage.PostedFiles)
+                    {
+                        string exttension = System.IO.Path.GetExtension(current.FileName);
+                        string newNameImage = Guid.NewGuid().ToString();
+                        current.SaveAs(System.IO.Path.Combine(Server.MapPath("~/Images/"), newNameImage + exttension));
+                        listofuploadedfiles.Text += String.Format("{0}<br />", newNameImage + exttension);
+
+                        ProductController.AddProductImage(result.product_id, newNameImage + exttension, result.create_by);
+                    }
                 }
-                ShowMessage(Page, "เพิ่มหมวดหมู่สำเร็จ");
+                ShowMessage(Page, "แก้ไขสำเร็จ");
             }
 
         }
@@ -92,6 +122,21 @@ namespace NungningRacingShop.Backend.Product
 
             return errMsg;
         }
-    }
 
+        protected void btnDel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var result = ProductController.DelProduct(product_id, true);
+                if (result != null)
+                    ShowMessage(Page, "ลบสำเร็จ");
+                else
+                    ShowMessage(Page, "ลบไม่สำเร็จ");
+            }
+            catch (Exception ex)
+            {
+                ShowMessage(Page, "เกิดข้อผิดพลาดในระบบ");
+            }
+        }
+    }
 }
