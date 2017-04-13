@@ -29,6 +29,7 @@ namespace NungningRacingShop.Backend.Product
             {
                 bindDllCategoryProduct();
                 bindProduct();
+                bindProductImage();
             }
 
         }
@@ -56,6 +57,13 @@ namespace NungningRacingShop.Backend.Product
                 ddlCategory.SelectedValue = result[0].product_category_id;
             }
 
+        }
+
+        private void bindProductImage()
+        {
+            var result = ProductController.GetProductImage(product_id);
+            rptProductImages.DataSource = result;
+            rptProductImages.DataBind();
         }
 
         protected void btnSend_Click(object sender, EventArgs e)
@@ -86,6 +94,7 @@ namespace NungningRacingShop.Backend.Product
             pro.amount = int.Parse(txtAmount.Text);
             pro.product_category_id = ddlCategory.SelectedValue;
             pro.lastupdate_by = (user_info == null) ? "No Login" : user_info.user_name;
+
             var result = ProductController.SetProduct(pro);
 
             if (result == null)
@@ -95,6 +104,26 @@ namespace NungningRacingShop.Backend.Product
             else
             {
 
+                foreach (RepeaterItem item in rptProductImages.Items)
+                {
+                    FileUpload file = (FileUpload)item.FindControl("fileItemImage");
+
+                    Literal lit = (Literal)item.FindControl("litImageId"); 
+                    if (file.HasFile)
+                    {
+                        string exttension = System.IO.Path.GetExtension(file.FileName);
+                        string newNameImage = Guid.NewGuid().ToString();
+                        file.SaveAs(System.IO.Path.Combine(Server.MapPath("~/Images/"), newNameImage + exttension));
+
+                        ProductImageInfo proi = new ProductImageInfo();
+                        proi.image_id = lit.Text;
+                        proi.product_id = result.product_id;
+                        proi.image = newNameImage + exttension;
+                        proi.lastupdate_by = result.lastupdate_by;
+                        ProductController.SetProductImage(proi);
+                    }
+
+                }
                 if (fileImage.HasFiles)
                 {
                     foreach (var current in fileImage.PostedFiles)
@@ -138,5 +167,27 @@ namespace NungningRacingShop.Backend.Product
                 ShowMessage(Page, "เกิดข้อผิดพลาดในระบบ");
             }
         }
+
+        protected void rptProductImages_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            try
+            {
+                string user_infoid = (string)e.CommandArgument;
+                switch (e.CommandName)
+                {
+                   
+                }
+            }
+            catch (Exception exc) 
+            {
+
+            }
+        }
+
+        public string getImage(string image_name)
+        {
+            return NungningRacingShop.Utility.Utility.getImage(image_name);
+        }
+
     }
 }

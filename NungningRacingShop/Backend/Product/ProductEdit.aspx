@@ -47,6 +47,32 @@
         <asp:FileUpload ID="fileImage" AllowMultiple="true" runat="server" />
         <asp:Label ID="listofuploadedfiles" runat="server" />
 
+           <asp:Repeater ID="rptProductImages" runat="server" OnItemCommand="rptProductImages_ItemCommand">
+                <HeaderTemplate>
+                    <table class="tableScoreReport">
+                        <thead>
+                            <tr>
+                                <th style="width: 5%; text-align: center">ลำดับ</th>
+                                <th style="width: 5%; text-align: center">รูปภาพ</th>
+                        </thead>
+                        <tbody>
+                </HeaderTemplate>
+                <ItemTemplate>
+
+                    <tr>
+                        <td><%# Container.ItemIndex %></td>
+                        <td><%# Eval("image") %></td>
+                        <td><img ="100" src="<%# getImage(Eval("image").ToString()) %>" style="height:128px;"/></td>
+                        <td>  <asp:Literal runat="server" ID="litImageId"></asp:Literal>  <asp:FileUpload ID="fileItemImage" AllowMultiple="false" runat="server" /></td>
+
+                    </tr>
+                </ItemTemplate>
+                <FooterTemplate>
+                    </tbody>
+                </table>
+                </FooterTemplate>
+            </asp:Repeater>
+
     </div>
 
     <asp:Button ID="btnSend" runat="server" Text="เพิ่มหมวดหมู่" CssClass="btn btn-success btn-lg submit-btn" OnClick="btnSend_Click" />
