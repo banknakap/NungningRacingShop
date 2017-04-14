@@ -13,5 +13,13 @@ namespace NungningRacingShop
         {
 
         }
+        public override bool requirelogin()
+        {
+            return false;
+        }
+        public override bool requireAdmin()
+        {
+            return false;
+        }
     }
 }

@@ -37,9 +37,9 @@ namespace Nungning.BLL.Controller
             return CBO.FillCollection<ProductInfo>(DataProvider.Instance().GetProduct(product_id,product_category_id));
         }
 
-        public static List<ProductImageInfo> GetProductImage(string product_id)
+        public static List<ProductImageInfo> GetProductImage(string image_id,string product_id)
         {
-            return CBO.FillCollection<ProductImageInfo>(DataProvider.Instance().GetProductImage(product_id));
+            return CBO.FillCollection<ProductImageInfo>(DataProvider.Instance().GetProductImage(image_id,product_id));
         }
         public static ProductInfo SetProduct(ProductInfo pro)
         {
@@ -73,6 +73,18 @@ namespace Nungning.BLL.Controller
             {
                 result[0].is_del = is_del;
                 return CBO.FillObject<ProductInfo>(DataProvider.Instance().SetProduct(result[0]));
+            }
+            else
+                return null;
+        }
+
+        public static ProductImageInfo DelProductImage(string image_id, bool is_del)
+        {
+            var result = GetProductImage(image_id, null);
+            if (result.Count == 1)
+            {
+                result[0].is_del = is_del;
+                return CBO.FillObject<ProductImageInfo>(DataProvider.Instance().SetProductImage(result[0]));
             }
             else
                 return null;

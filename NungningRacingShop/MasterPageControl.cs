@@ -9,6 +9,8 @@ namespace NungningRacingShop
 {
     public abstract class MasterPageControl : Page
     {
+        public abstract bool requirelogin();
+        public abstract bool requireAdmin();
         public static UserInfo user_info
         {
             get
@@ -22,7 +24,6 @@ namespace NungningRacingShop
         }
 
 
-
         public static void ShowMessage(Page page, string message, string redirectUrl = null)
         {
             page.ClientScript.RegisterStartupScript(page.GetType(),"JSSCRIPT", string.Format("<script> alert('{0}');{1}", message.Replace("'", "\\'"), !string.IsNullOrEmpty(redirectUrl) ? "window.location = '" + redirectUrl + "';</script>" : "</script>"));
@@ -32,13 +33,17 @@ namespace NungningRacingShop
         {
             base.OnLoad(e);
 
-            if (user_info == null)
+            if (requirelogin())
             {
                 string path = HttpContext.Current.Request.Url.AbsolutePath;
                 //RedirectTo("~/Default.aspx");
             }
         }
 
+        protected override void OnPreRenderComplete(EventArgs e)
+        {
+            base.OnPreRenderComplete(e);
+        }
 
         protected static void RedirectTo(string url)
         {

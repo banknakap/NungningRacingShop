@@ -62,8 +62,16 @@
                     <tr>
                         <td><%# Container.ItemIndex %></td>
                         <td><%# Eval("image") %></td>
+                        <td></td>
                         <td><img ="100" src="<%# getImage(Eval("image").ToString()) %>" style="height:128px;"/></td>
-                        <td>  <asp:Literal runat="server" ID="litImageId"></asp:Literal>  <asp:FileUpload ID="fileItemImage" AllowMultiple="false" runat="server" /></td>
+                        <td>  
+                            <asp:TextBox ID="txtImageId" runat="server" type="hidden" Text='<%# Eval("image_id") %>'></asp:TextBox>
+                            <asp:TextBox ID="txtImageName" runat="server" type="hidden" Text='<%# Eval("image") %>'></asp:TextBox>
+                            <asp:FileUpload ID="fileItemImage" AllowMultiple="false" runat="server" /></td>
+                        <td>
+                            <asp:LinkButton ID="lnkImageDel" runat="server" CssClass="btn btn-danger btn-lg submit-btn" CommandName="PROIMAGE_DEL" 
+                                CommandArgument='<%# Eval("image_id") %>'  ToolTip="ลบภาพ" Font-Underline="true"  OnClientClick="return confirm('คุณต้องการลบรูปภาพจริงหรือไม่ จริงหรือไม่');" >ลบรูปภาพ</asp:LinkButton>
+                        </td>
 
                     </tr>
                 </ItemTemplate>
@@ -75,6 +83,6 @@
 
     </div>
 
-    <asp:Button ID="btnSend" runat="server" Text="เพิ่มหมวดหมู่" CssClass="btn btn-success btn-lg submit-btn" OnClick="btnSend_Click" />
+    <asp:Button ID="btnSend" runat="server" Text="แก้ไข" CssClass="btn btn-success btn-lg submit-btn" OnClick="btnSend_Click" />
     <asp:Button ID="btnDel" runat="server" Text="ลบ" CssClass="btn btn-danger btn-lg submit-btn" OnClick="btnDel_Click" />
 </asp:Content>

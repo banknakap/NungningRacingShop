@@ -11,6 +11,14 @@ namespace NungningRacingShop.Backend.Product
 {
     public partial class ProductCategoryAdd : MasterPageControl
     {
+        public override bool requirelogin()
+        {
+            return true;
+        }
+        public override bool requireAdmin()
+        {
+            return true;
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
 

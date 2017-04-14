@@ -194,9 +194,10 @@ namespace Nungning.DAL
                 , GetNull(product_category_id)
                 );
         }
-        public override IDataReader GetProductImage(string product_id)
+        public override IDataReader GetProductImage(string image_id, string product_id)
         {
             return SqlHelper.ExecuteReader(ConnectionString, GetFullyQualifiedName("usp_Product_GetProductImage")
+                , GetNull(image_id)
                 , GetNull(product_id)
                 );
         }

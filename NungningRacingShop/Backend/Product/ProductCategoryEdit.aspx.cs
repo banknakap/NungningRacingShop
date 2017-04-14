@@ -11,6 +11,14 @@ namespace NungningRacingShop.Backend.Product
 {
     public partial class ProductCategoryEdit : MasterPageControl
     {
+        public override bool requirelogin()
+        {
+            return true;
+        }
+        public override bool requireAdmin()
+        {
+            return true;
+        }
         private string product_category_id
         {
             set

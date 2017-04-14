@@ -2,6 +2,7 @@
 using Nungning.BLL.Info;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -11,6 +12,14 @@ namespace NungningRacingShop.Backend.Product
 {
     public partial class ProductEdit : MasterPageControl
     {
+        public override bool requirelogin()
+        {
+            return true;
+        }
+        public override bool requireAdmin()
+        {
+            return true;
+        }
         private string product_id
         {
             set
@@ -22,6 +31,8 @@ namespace NungningRacingShop.Backend.Product
                 return (string)ViewState["product_id"];
             }
         }
+
+ 
         protected void Page_Load(object sender, EventArgs e)
         {
             product_id = Request.QueryString["product_id"];
@@ -61,7 +72,7 @@ namespace NungningRacingShop.Backend.Product
 
         private void bindProductImage()
         {
-            var result = ProductController.GetProductImage(product_id);
+            var result = ProductController.GetProductImage(null,product_id);
             rptProductImages.DataSource = result;
             rptProductImages.DataBind();
         }
@@ -103,20 +114,24 @@ namespace NungningRacingShop.Backend.Product
             }
             else
             {
-
+               
                 foreach (RepeaterItem item in rptProductImages.Items)
                 {
                     FileUpload file = (FileUpload)item.FindControl("fileItemImage");
 
-                    Literal lit = (Literal)item.FindControl("litImageId"); 
+                    TextBox txtImageId = (TextBox)item.FindControl("txtImageId");
+                    TextBox txtImageName = (TextBox)item.FindControl("txtImageName");
+                    //updateImage
                     if (file.HasFile)
                     {
                         string exttension = System.IO.Path.GetExtension(file.FileName);
                         string newNameImage = Guid.NewGuid().ToString();
                         file.SaveAs(System.IO.Path.Combine(Server.MapPath("~/Images/"), newNameImage + exttension));
 
+                        File.Delete(System.IO.Path.Combine(Server.MapPath("~/Images/"), txtImageName.Text));
+
                         ProductImageInfo proi = new ProductImageInfo();
-                        proi.image_id = lit.Text;
+                        proi.image_id = txtImageId.Text;
                         proi.product_id = result.product_id;
                         proi.image = newNameImage + exttension;
                         proi.lastupdate_by = result.lastupdate_by;
@@ -124,6 +139,7 @@ namespace NungningRacingShop.Backend.Product
                     }
 
                 }
+                //add new Image
                 if (fileImage.HasFiles)
                 {
                     foreach (var current in fileImage.PostedFiles)
@@ -136,6 +152,8 @@ namespace NungningRacingShop.Backend.Product
                         ProductController.AddProductImage(result.product_id, newNameImage + exttension, result.create_by);
                     }
                 }
+                bindProduct();
+                bindProductImage();
                 ShowMessage(Page, "แก้ไขสำเร็จ");
             }
 
@@ -172,11 +190,18 @@ namespace NungningRacingShop.Backend.Product
         {
             try
             {
-                string user_infoid = (string)e.CommandArgument;
+                string image_id = (string)e.CommandArgument;
                 switch (e.CommandName)
                 {
-                   
+                    case "PROIMAGE_DEL":
+                        ProductController.DelProductImage(image_id, true);
+                        break;
+                    default:
+                        break;
                 }
+
+                bindProduct();
+                bindProductImage();
             }
             catch (Exception exc) 
             {
