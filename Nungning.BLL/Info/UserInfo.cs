@@ -21,6 +21,14 @@ namespace Nungning.BLL.Info
         public string create_by { get; set; }
         public DateTime lastupdate_date { get; set; }
         public string lastupdate_by { get; set; }
+        public bool is_del { get; set; }
 
+    }
+
+    public enum UserType
+    {
+        Admin,
+        General,
+        Staff
     }
 }

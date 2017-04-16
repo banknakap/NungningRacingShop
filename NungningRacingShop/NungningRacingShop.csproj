@@ -128,9 +128,11 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="Authentication\Login.aspx" />
+    <Content Include="Authentication\ProfileEdit.aspx" />
     <Content Include="Backend\Product\ProductAdd.aspx" />
     <Content Include="Backend\Product\ProductCategoryAdd.aspx" />
     <Content Include="Backend\Product\ProductCategoryEdit.aspx" />
+    <Content Include="Backend\Product\ProductCategoryList.aspx" />
     <Content Include="Backend\Product\ProductEdit.aspx" />
     <Content Include="Backend\Product\ProductList.aspx" />
     <Content Include="Contact.aspx" />
@@ -201,6 +203,13 @@
     <Compile Include="Authentication\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Authentication\ProfileEdit.aspx.cs">
+      <DependentUpon>ProfileEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Authentication\ProfileEdit.aspx.designer.cs">
+      <DependentUpon>ProfileEdit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Backend\Backend.Master.cs">
       <DependentUpon>Backend.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -228,6 +237,13 @@
     </Compile>
     <Compile Include="Backend\Product\ProductCategoryEdit.aspx.designer.cs">
       <DependentUpon>ProductCategoryEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Backend\Product\ProductCategoryList.aspx.cs">
+      <DependentUpon>ProductCategoryList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Backend\Product\ProductCategoryList.aspx.designer.cs">
+      <DependentUpon>ProductCategoryList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Backend\Product\ProductEdit.aspx.cs">
       <DependentUpon>ProductEdit.aspx</DependentUpon>
@@ -261,6 +277,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="MasterPageControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageControl.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="NNObservable.cs" />

@@ -47,7 +47,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">Application name</a>
+                    <a class="navbar-brand" runat="server" href="~/">NungningRacingShop</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
@@ -55,6 +55,9 @@
                         <li><a runat="server" href="~/About">About</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>
                         <li><a runat="server" href="~/Authentication/Register">Register</a></li>
+                        <li><span class="label label-primary">ยินดีต้อนรับคุณ</span> </li>
+                        <li><asp:Label ID="lblFullName" CssClass="label label-default" runat="server"></asp:Label></li>
+                        <li><asp:Button ID="btnLogout" runat="server" Text="ออกจากระบบ"  OnClientClick="return confirm('คุณต้องออกจากระบบจริงหรือไม่ จริงหรือไม่');" CssClass="btn" OnClick="btnLogout_Click" /></li>
                     </ul>
                 </div>
             </div>

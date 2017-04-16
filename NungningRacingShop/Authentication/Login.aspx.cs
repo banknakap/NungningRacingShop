@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace NungningRacingShop.Authentication
 {
-    public partial class Login : MasterPageControl
+    public partial class Login : PageControl
     {
         public override bool requirelogin()
         {
@@ -18,9 +18,26 @@ namespace NungningRacingShop.Authentication
         {
             return false;
         }
+        private string return_page
+        {
+            set
+            {
+                ViewState["return_page"] = value;
+            }
+            get
+            {
+                return (string)ViewState["return_page"];
+            }
+        }
+        
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            return_page = Request.QueryString["return_page"];
+            if (!Page.IsPostBack)
+            {
+
+            }
         }
 
         protected void btnSend_Click(object sender, EventArgs e)
@@ -46,7 +63,15 @@ namespace NungningRacingShop.Authentication
             if (user != null)
             {
                 user_info = user;
-                RedirectTo("~/Default.aspx");
+
+                if (!string.IsNullOrEmpty(return_page))
+                {
+                    RedirectTo("~"+return_page);
+                }
+                else
+                {
+                    RedirectTo("~/Default.aspx");
+                }
             }
             else
             {

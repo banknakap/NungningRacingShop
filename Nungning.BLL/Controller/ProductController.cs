@@ -37,6 +37,22 @@ namespace Nungning.BLL.Controller
             return CBO.FillCollection<ProductInfo>(DataProvider.Instance().GetProduct(product_id,product_category_id));
         }
 
+        public static List<ProductInfo> SearchProduct(string product_id, string product_category_id, string title)
+        {
+            ProductInfo pro = new ProductInfo();
+            pro.product_id = product_id;
+            pro.product_category_id = product_category_id;
+            pro.title = title;
+            return CBO.FillCollection<ProductInfo>(DataProvider.Instance().SearchProduct(pro));
+        }
+        public static List<ProductInfo> SearchProductCategory( string product_category_id, string title)
+        {
+            ProductCategoryInfo pro = new ProductCategoryInfo();
+            pro.product_category_id = product_category_id;
+            pro.title = title;
+            return CBO.FillCollection<ProductInfo>(DataProvider.Instance().SearchProductCategory(pro));
+        }
+
         public static List<ProductImageInfo> GetProductImage(string image_id,string product_id)
         {
             return CBO.FillCollection<ProductImageInfo>(DataProvider.Instance().GetProductImage(image_id,product_id));

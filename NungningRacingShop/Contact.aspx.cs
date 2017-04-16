@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace NungningRacingShop
 {
-    public partial class Contact : MasterPageControl
+    public partial class Contact : PageControl
     {
         public override bool requirelogin()
         {

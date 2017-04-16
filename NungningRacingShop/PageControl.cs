@@ -7,9 +7,10 @@ using System.Web.UI;
 
 namespace NungningRacingShop
 {
-    public abstract class MasterPageControl : MasterPage
+    public abstract class PageControl : Page
     {
-       
+        public abstract bool requirelogin();
+        public abstract bool requireAdmin();
         public static UserInfo user_info
         {
             get
@@ -34,12 +35,50 @@ namespace NungningRacingShop
 
             base.OnInit(e);
         }
+
+        protected override void OnPreInit(EventArgs e)
+        {
+            if (requirelogin())
+            {
+                if (user_info == null)
+                {
+                    string path = Request.Url.PathAndQuery.ToString();
+                    string return_path = path.Replace("/NungningRacingShop", "");
+                    RedirectTo("~/Authentication/Login.aspx?return_page="+ return_path);
+                    return;
+                }
+                if (requireAdmin())
+                {
+                    if (!user_info.user_type.Equals(UserType.Admin.ToString()))
+                    {
+                        ShowMessage(Page, "คุณไม่มีสิทธิ์เข้าใช้งานหน้านี้", getUrl("~/Default.aspx"));
+                        return;
+                    }
+                }
+
+            }
+            base.OnPreInit(e);
+           
+        }
+        protected override void OnLoad(EventArgs e)
+        {
+          
+
+            base.OnLoad(e);
+
+         
+        }
+
         public static string getUrl(string path)
         {
             string strUrl = HttpContext.Current.Request.Url.Host + VirtualPathUtility.ToAbsolute(path);
             return HttpUtility.UrlPathEncode(HttpContext.Current.Request.Url.Scheme + "://" + strUrl);
         }
 
+        protected override void OnPreRenderComplete(EventArgs e)
+        {
+            base.OnPreRenderComplete(e);
+        }
 
         protected static void RedirectTo(string url)
         {

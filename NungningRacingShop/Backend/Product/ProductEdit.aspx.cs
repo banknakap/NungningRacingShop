@@ -10,7 +10,7 @@ using System.Web.UI.WebControls;
 
 namespace NungningRacingShop.Backend.Product
 {
-    public partial class ProductEdit : MasterPageControl
+    public partial class ProductEdit : PageControl
     {
         public override bool requirelogin()
         {

@@ -19,5 +19,9 @@ namespace Nungning.BLL.Controller
         {
             return CBO.FillCollection<UserInfo>(DataProvider.Instance().AddUser(user));
         }
+        public static UserInfo SetUser(UserInfo user)
+        {
+            return CBO.FillObject<UserInfo>(DataProvider.Instance().SetUser(user));
+        }
     }
 }

@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace NungningRacingShop
 {
-    public partial class About : MasterPageControl
+    public partial class About : PageControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {

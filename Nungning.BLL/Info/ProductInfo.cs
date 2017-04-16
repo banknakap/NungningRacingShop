@@ -25,5 +25,7 @@ namespace Nungning.BLL.Info
         //extra
         public string catetitle { get; set; }
         public string catedes { get; set; }
+        public string image_id { get; set; }
+        public string image { get; set; }
     }
 }

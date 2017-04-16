@@ -153,6 +153,23 @@ namespace Nungning.DAL
                 );
         }
 
+        public override IDataReader SetUser(UserInfo user)
+        {
+            return SqlHelper.ExecuteReader(ConnectionString, GetFullyQualifiedName("usp_User_SetUser")
+                , GetNull(user.user_infoid)
+                , GetNull(user.user_name)
+                , GetNull(user.password)
+                , GetNull(user.user_type)
+                , GetNull(user.first_name)
+                , GetNull(user.last_name)
+                , GetNull(user.gender)
+                , GetNull(user.address)
+                , GetNull(user.lastupdate_date)
+                , GetNull(user.lastupdate_by)
+                , GetNull(user.is_del)
+                );
+        }
+
 
         #endregion
 
@@ -209,7 +226,7 @@ namespace Nungning.DAL
                 );
         }
 
-    
+
 
         public override IDataReader SetProduct(ProductInfo pro)
         {
@@ -249,7 +266,23 @@ namespace Nungning.DAL
                 , GetNull(proimage.is_del)
                 );
         }
+        public override IDataReader SearchProduct(ProductInfo pro)
+        {
+            return SqlHelper.ExecuteReader(ConnectionString, GetFullyQualifiedName("usp_Product_SearchProduct")
+                , GetNull(pro.product_id)
+                , GetNull(pro.product_category_id)
+                , GetNull(pro.title)
+                );
+        }
+        public override IDataReader SearchProductCategory(ProductCategoryInfo proc)
+        {
+            return SqlHelper.ExecuteReader(ConnectionString, GetFullyQualifiedName("usp_Product_SearchProductCategory")
+                , GetNull(proc.product_category_id)
+                , GetNull(proc.title)
+                );
+        }
 
+        
 
         #endregion
 
