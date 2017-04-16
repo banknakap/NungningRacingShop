@@ -71,7 +71,7 @@ namespace NungningRacingShop.Authentication
             }
             else
             {
-                ShowMessage(Page, "ผิดพลาด");
+                ShowMessage(Page, "แก้ไขผิดพลาด");
             }
 
         }
