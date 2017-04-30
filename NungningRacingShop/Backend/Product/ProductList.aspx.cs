@@ -1,4 +1,5 @@
 ﻿using Nungning.BLL.Controller;
+using NungningRacingShop.Info;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -54,7 +55,7 @@ namespace NungningRacingShop.Backend.Product
                 switch (e.CommandName)
                 {
                     case "PRODUCT_EDIT":
-                        RedirectTo("~/Backend/Product/ProductEdit.aspx" + "?product_id="+ product_id);
+                        RedirectTo("~/Backend/Product/ProductEdit.aspx" + "?product_id=" + product_id);
                         break;
                     case "PRODUCT_DEL":
                         ProductController.DelProduct(product_id, true);

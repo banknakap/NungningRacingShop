@@ -1,4 +1,5 @@
 ﻿using Nungning.BLL.Info;
+using NungningRacingShop.Controller;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,12 +18,34 @@ namespace NungningRacingShop
         {
             if (!IsPostBack)
             {
-                if (user_info!=null)
+                if (SessionApp.user_info !=null)
                 {
-                    string fullname = user_info.first_name + " " + user_info.last_name;
+                    string fullname = SessionApp.user_info.first_name + " " + SessionApp.user_info.last_name;
                     lblFullName.Text = fullname;
+
+                    div_nologin.Visible = false;
+
+                    badge_cart.InnerText = SessionApp.cart_session.Count.ToString();
+
+                    
+                }
+                else
+                {
+                    string path = Request.Url.PathAndQuery.ToString();
+                    string return_path = path.Replace("/Home", "");
+                    btn_login.HRef = "~/Authentication/Login.aspx?return_page=" + return_path;
+
+                    div_login.Visible = false;
+
+
+                    badge_cart2.InnerText = SessionApp.cart_session.Count.ToString();
+
                 }
 
+         
+
+           
+  
             }
         }
 
@@ -30,12 +53,12 @@ namespace NungningRacingShop
         {
             try
             {
-                if (user_info!=null)
+                if (SessionApp.user_info !=null)
                 {
-                    user_info = null;
+                    SessionApp.user_info = null;
 
                     string path = Request.Url.PathAndQuery.ToString();
-                    string return_path = path.Replace("/NungningRacingShop", "");
+                    string return_path = path.Replace("/Home", "");
                     //RedirectTo("~"+ return_path);
                     RedirectTo("~/Default.aspx");
                 }

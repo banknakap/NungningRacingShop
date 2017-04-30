@@ -1,5 +1,6 @@
 ﻿using Nungning.BLL.Controller;
 using Nungning.BLL.Info;
+using NungningRacingShop.Controller;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,7 +48,7 @@ namespace NungningRacingShop.Backend.Product
             ProductCategoryInfo procate = new ProductCategoryInfo();
             procate.title = txtTitle.Text;
             procate.description = txtDesciption.Text;
-            procate.create_by = (user_info==null) ? "No Login" : user_info.user_name;
+            procate.create_by = (SessionApp.user_info ==null) ? "No Login" : SessionApp.user_info.user_name;
             var result = ProductController.AddProductCategory(procate);
 
             if (result == null)

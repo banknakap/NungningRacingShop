@@ -1,4 +1,5 @@
 ﻿using Nungning.BLL.Controller;
+using NungningRacingShop.Controller;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -62,7 +63,7 @@ namespace NungningRacingShop.Authentication
             var user = UserController.GetUserByLogin(txtUserName.Text, txtPassword.Text);
             if (user != null)
             {
-                user_info = user;
+                SessionApp.user_info = user;
 
                 if (!string.IsNullOrEmpty(return_page))
                 {

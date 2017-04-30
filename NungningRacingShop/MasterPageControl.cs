@@ -1,4 +1,5 @@
 ﻿using Nungning.BLL.Info;
+using NungningRacingShop.Info;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,18 +11,7 @@ namespace NungningRacingShop
     public abstract class MasterPageControl : MasterPage
     {
        
-        public static UserInfo user_info
-        {
-            get
-            {
-                return (UserInfo)HttpContext.Current.Session["user_info"];
-            }
-            set
-            {
-                HttpContext.Current.Session["user_info"] = value;
-            }
-        }
-
+    
 
         public static void ShowMessage(Page page, string message, string redirectUrl = null)
         {

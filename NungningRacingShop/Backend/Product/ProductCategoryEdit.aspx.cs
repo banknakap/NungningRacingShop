@@ -1,5 +1,6 @@
 ﻿using Nungning.BLL.Controller;
 using Nungning.BLL.Info;
+using NungningRacingShop.Controller;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -75,7 +76,7 @@ namespace NungningRacingShop.Backend.Product
             procate.product_category_id = product_category_id;
             procate.title = txtTitle.Text;
             procate.description = txtDesciption.Text;
-            procate.lastupdate_by = (user_info == null) ? "No Login" : user_info.user_name;
+            procate.lastupdate_by = (SessionApp.user_info == null) ? "No Login" : SessionApp.user_info.user_name;
             var result = ProductController.SetProductCategory(procate);
 
             if (result == null)

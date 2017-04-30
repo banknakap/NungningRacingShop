@@ -1,5 +1,6 @@
 ﻿using Nungning.BLL.Controller;
 using Nungning.BLL.Info;
+using NungningRacingShop.Controller;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -104,7 +105,7 @@ namespace NungningRacingShop.Backend.Product
             pro.price = float.Parse(txtPrice.Text);
             pro.amount = int.Parse(txtAmount.Text);
             pro.product_category_id = ddlCategory.SelectedValue;
-            pro.lastupdate_by = (user_info == null) ? "No Login" : user_info.user_name;
+            pro.lastupdate_by = (SessionApp.user_info == null) ? "No Login" : SessionApp.user_info.user_name;
 
             var result = ProductController.SetProduct(pro);
 

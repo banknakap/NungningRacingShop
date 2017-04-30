@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NungningRacingShop.Controller;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,9 +12,9 @@ namespace NungningRacingShop.Backend
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (user_info != null)
+            if (SessionApp.user_info != null)
             {
-                string fullname = user_info.first_name + " " + user_info.last_name;
+                string fullname = SessionApp.user_info.first_name + " " + SessionApp.user_info.last_name;
                 lblFullName.Text = fullname;
             }
         }
@@ -22,12 +23,12 @@ namespace NungningRacingShop.Backend
         {
             try
             {
-                if (user_info != null)
+                if (SessionApp.user_info != null)
                 {
-                    user_info = null;
+                    SessionApp.user_info = null;
 
                     string path = Request.Url.PathAndQuery.ToString();
-                    string return_path = path.Replace("/NungningRacingShop", "");
+                    string return_path = path.Replace("/Home", "");
                     RedirectTo("~" + return_path);
                 }
             }

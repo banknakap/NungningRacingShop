@@ -1,4 +1,5 @@
 ﻿using Nungning.BLL.Controller;
+using NungningRacingShop.Controller;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +24,7 @@ namespace NungningRacingShop.Authentication
         {
             if (!IsPostBack)
             {
-                if (user_info != null)
+                if (SessionApp.user_info != null)
                 {
                     bindProfile();
                 }
@@ -33,11 +34,11 @@ namespace NungningRacingShop.Authentication
         
         private void bindProfile()
         {
-            txtFirstName.Text = user_info.first_name;
-            txtLastName.Text = user_info.last_name;
-            txtAddress.Text = user_info.address;
-            rdoMale.Checked = (user_info.gender == 1) ? true : false;
-            rdoFemale.Checked = (user_info.gender == 0) ? true : false;
+            txtFirstName.Text = SessionApp.user_info.first_name;
+            txtLastName.Text = SessionApp.user_info.last_name;
+            txtAddress.Text = SessionApp.user_info.address;
+            rdoMale.Checked = (SessionApp.user_info.gender == 1) ? true : false;
+            rdoFemale.Checked = (SessionApp.user_info.gender == 0) ? true : false;
         }
 
         protected void btnSend_Click(object sender, EventArgs e)
@@ -59,14 +60,14 @@ namespace NungningRacingShop.Authentication
         }
         private void setProfile()
         {
-            user_info.first_name = txtFirstName.Text;
-            user_info.last_name = txtLastName.Text;
-            user_info.address = txtAddress.Text;
-            user_info.gender = (rdoMale.Checked) ? 0 : 1;
-            var result = UserController.SetUser(user_info);
+            SessionApp.user_info.first_name = txtFirstName.Text;
+            SessionApp.user_info.last_name = txtLastName.Text;
+            SessionApp.user_info.address = txtAddress.Text;
+            SessionApp.user_info.gender = (rdoMale.Checked) ? 0 : 1;
+            var result = UserController.SetUser(SessionApp.user_info);
             if (result!=null)
             {
-                user_info = result;
+                SessionApp.user_info = result;
                 ShowMessage(Page, "แก้ไขสำเร็จ");
             }
             else

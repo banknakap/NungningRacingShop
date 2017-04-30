@@ -1,4 +1,6 @@
 ﻿using Nungning.BLL.Info;
+using NungningRacingShop.Controller;
+using NungningRacingShop.Info;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,17 +13,7 @@ namespace NungningRacingShop
     {
         public abstract bool requirelogin();
         public abstract bool requireAdmin();
-        public static UserInfo user_info
-        {
-            get
-            {
-                return (UserInfo)HttpContext.Current.Session["user_info"];
-            }
-            set
-            {
-                HttpContext.Current.Session["user_info"] = value;
-            }
-        }
+    
 
 
         public static void ShowMessage(Page page, string message, string redirectUrl = null)
@@ -29,9 +21,15 @@ namespace NungningRacingShop
             page.ClientScript.RegisterStartupScript(page.GetType(),"JSSCRIPT", string.Format("<script> alert('{0}');{1}", message.Replace("'", "\\'"), !string.IsNullOrEmpty(redirectUrl) ? "window.location = '" + redirectUrl + "';</script>" : "</script>"));
         }
 
+        public static void CallJS(Page page, string state_ment)
+        {
+            page.ClientScript.RegisterStartupScript(page.GetType(), "JSSCRIPT", string.Format("<script>"+ state_ment + "</script> "));
+        }
+
         protected override void OnInit(EventArgs e)
         {
-            
+            if (SessionApp.cart_session == null)
+                SessionApp.cart_session = new List<CartInfo>();
 
             base.OnInit(e);
         }
@@ -40,16 +38,16 @@ namespace NungningRacingShop
         {
             if (requirelogin())
             {
-                if (user_info == null)
+                if (SessionApp.user_info == null)
                 {
                     string path = Request.Url.PathAndQuery.ToString();
-                    string return_path = path.Replace("/NungningRacingShop", "");
+                    string return_path = path.Replace("/Home", "");
                     RedirectTo("~/Authentication/Login.aspx?return_page="+ return_path);
                     return;
                 }
                 if (requireAdmin())
                 {
-                    if (!user_info.user_type.Equals(UserType.Admin.ToString()))
+                    if (!SessionApp.user_info.user_type.Equals(UserType.Admin.ToString()))
                     {
                         ShowMessage(Page, "คุณไม่มีสิทธิ์เข้าใช้งานหน้านี้", getUrl("~/Default.aspx"));
                         return;
