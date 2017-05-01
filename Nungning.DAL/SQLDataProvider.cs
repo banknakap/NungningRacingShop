@@ -282,7 +282,48 @@ namespace Nungning.DAL
                 );
         }
 
-        
+
+
+        #endregion
+
+        #region Bill
+        public override IDataReader AddBill(string user_infoid, float total_price, string address, string create_by)
+        {
+            return SqlHelper.ExecuteReader(ConnectionString, GetFullyQualifiedName("usp_Bill_AddBill")
+                , GetNull(user_infoid)
+                , GetNull(total_price)
+                , GetNull(address)
+                , GetNull(create_by)
+                );
+        }
+
+        public override IDataReader AddBillDetail(string bill_id, string product_id, int amount, float sum_price, string create_by)
+        {
+            return SqlHelper.ExecuteReader(ConnectionString, GetFullyQualifiedName("usp_Bill_AddBillDetail")
+                , GetNull(bill_id)
+                , GetNull(product_id)
+                , GetNull(amount)
+                , GetNull(sum_price)
+                , GetNull(create_by)
+                );
+        }
+        public override IDataReader GetBill(string bill_id, string user_infoid)
+        {
+            return SqlHelper.ExecuteReader(ConnectionString, GetFullyQualifiedName("usp_Bill_GetBill")
+                , GetNull(bill_id)
+                , GetNull(user_infoid)
+                );
+        }
+
+        public override IDataReader GetBillDetail(string bill_detail_id,string bill_id)
+        {
+            return SqlHelper.ExecuteReader(ConnectionString, GetFullyQualifiedName("usp_Bill_GetBillDetail")
+                , GetNull(bill_detail_id)
+                , GetNull(bill_id)
+                );
+        }
+
+
 
         #endregion
 

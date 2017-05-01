@@ -135,6 +135,7 @@
     <Content Include="Backend\Product\ProductCategoryList.aspx" />
     <Content Include="Backend\Product\ProductEdit.aspx" />
     <Content Include="Backend\Product\ProductList.aspx" />
+    <Content Include="BillDetail.aspx" />
     <Content Include="Cart.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
@@ -259,6 +260,13 @@
     </Compile>
     <Compile Include="Backend\Product\ProductList.aspx.designer.cs">
       <DependentUpon>ProductList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BillDetail.aspx.cs">
+      <DependentUpon>BillDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BillDetail.aspx.designer.cs">
+      <DependentUpon>BillDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="Cart.aspx.cs">
       <DependentUpon>Cart.aspx</DependentUpon>

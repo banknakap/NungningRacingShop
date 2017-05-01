@@ -92,5 +92,12 @@ namespace Nungning.BLL.Provider
         public abstract IDataReader SearchProductCategory(ProductCategoryInfo proc);
         #endregion
 
+        #region Bill
+        public abstract IDataReader AddBill(string user_infoid,float total_price, string address, string create_by);
+        public abstract IDataReader AddBillDetail(string bill_id, string product_id, int amount, float sum_price, string create_by);
+        public abstract IDataReader GetBill(string bill_id,string user_infoid);
+        public abstract IDataReader GetBillDetail(string bill_detail_id, string bill_id);
+        #endregion
+
     }
 }

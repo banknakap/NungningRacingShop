@@ -23,6 +23,8 @@ margin: 0 auto;
                         <img ="100" src="<%# getImage(Eval("image").ToString()) %>"  style="height:150px; max-width: 240px;"/> <br>
                            <div>
                         <label>จำนวน <%# Eval("cart_amount") %> ชิ้น</label>
+                               <br>
+                               <label>ราคา <%# Eval("sum_price") %> บาท</label>
                            
                             <asp:LinkButton ID="LinkButton1" runat="server" CssClass="btn btn-danger btn-sm" style="float: right;" CommandName="DEL_CART" 
                                 CommandArgument='<%# Eval("product_id") %>' OnClientClick="return confirm('คุณต้องการลบจริงหรือไม่ จริงหรือไม่');"  ToolTip="ลบ" Font-Underline="true" ><span class="glyphicon glyphicon-trash"></span></asp:LinkButton>
@@ -38,9 +40,8 @@ margin: 0 auto;
                 </ItemTemplate>
            
                 <FooterTemplate>
-
-                    
                     </div>
+                    <label>ราคาสุทธิ <%# total_price %> บาท</label>
                 </FooterTemplate>
             </asp:repeater>
 

@@ -40,8 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\BillController.cs" />
     <Compile Include="Controller\ProductController.cs" />
     <Compile Include="Controller\UserController.cs" />
+    <Compile Include="Info\BillDetailInfo.cs" />
+    <Compile Include="Info\BillInfo.cs" />
     <Compile Include="Info\ProductCategoryInfo.cs" />
     <Compile Include="Info\ProductImageInfo.cs" />
     <Compile Include="Info\ProductInfo.cs" />

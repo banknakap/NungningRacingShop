@@ -13,7 +13,7 @@ namespace Nungning.BLL.Info
         public string product_category_id { get; set; }
         public string title { get; set; }
         public string description { get; set; }
-        public double price { get; set; }
+        public float price { get; set; }
         public long amount { get; set; }
         public int display_sort { get; set; }
         public DateTime create_date { get; set; }
@@ -30,5 +30,6 @@ namespace Nungning.BLL.Info
 
         //cart extra
         public int cart_amount { get; set; }
+        public float sum_price { get; set; }
     }
 }

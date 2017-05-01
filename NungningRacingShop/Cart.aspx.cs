@@ -39,15 +39,18 @@ namespace NungningRacingShop
             }
         }
 
-
+        public static List<ProductInfo> currentCart;
+        public static float total_price = 0;
         private void bindCartProductList()
         {
-            List<ProductInfo> currentCart = new List<ProductInfo>();
+            currentCart = new List<ProductInfo>();
 
             foreach (var c in SessionApp.cart_session)
             {
                 ProductInfo item = ProductController.GetProduct(c.product_id, null).FirstOrDefault();
                 item.cart_amount = c.amount;
+                item.sum_price = (c.amount * item.price);
+                total_price += item.sum_price;
                 currentCart.Add(item);
             }
 
@@ -73,14 +76,37 @@ namespace NungningRacingShop
                 string resultValidate = Onvalidate();
                 if (string.IsNullOrEmpty(resultValidate))
                 {
-                    //register();
+                    if (SessionApp.user_info == null)
+                    {
+                        string path = Request.Url.PathAndQuery.ToString();
+                        string return_path = path.Replace("/Home", "");
+                        RedirectTo("~/Authentication/Login.aspx?return_page=" + return_path);
+                        return;
+                    }
+                    else
+                    {
+                        buyProduct();
+                    }
                 }
                 else
                     ShowMessage(Page, resultValidate);
             }
             catch (Exception ex)
             {
+                ShowMessage(Page, ex.Message);
+            }
+        }
+        private void buyProduct()
+        {
+            string user_infoid = (SessionApp.user_info == null) ? "No Login" : SessionApp.user_info.user_infoid;
+            string user_name = (SessionApp.user_info == null) ? "No Login" : SessionApp.user_info.user_name;
 
+            var bill = BillController.AddBill(user_infoid, total_price, txtAddress.Text, user_name);
+            List<BillDetailInfo> bills = new List<BillDetailInfo>();
+            foreach (var c in currentCart)
+            {
+                var resultbill = BillController.AddBillDetail(bill.bill_id, c.product_id, c.cart_amount, (c.cart_amount * c.price), user_name);
+                bills.Add(resultbill);
             }
         }
 
