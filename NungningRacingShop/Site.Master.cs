@@ -38,7 +38,8 @@ namespace NungningRacingShop
                     div_login.Visible = false;
 
 
-                    badge_cart2.InnerText = SessionApp.cart_session.Count.ToString();
+                    if (SessionApp.cart_session != null)
+                        badge_cart2.InnerText = SessionApp.cart_session.Count.ToString();
 
                 }
 

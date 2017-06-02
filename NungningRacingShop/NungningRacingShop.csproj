@@ -154,11 +154,62 @@
     <Content Include="Backend\Backend.Master" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Authentication\Register.aspx" />
+    <Content Include="ProductDetail.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\ProductGallery\css\demo.css" />
+    <Content Include="Scripts\ProductGallery\css\foundation.css" />
+    <Content Include="Scripts\ProductGallery\css\normalize.css" />
+    <Content Include="Scripts\ProductGallery\css\xzoom.css" />
+    <Content Include="Scripts\ProductGallery\dist\xzoom.css" />
+    <Content Include="Scripts\ProductGallery\dist\xzoom.min.js" />
+    <Content Include="Scripts\ProductGallery\fancybox\source\blank.gif" />
+    <Content Include="Scripts\ProductGallery\fancybox\source\fancybox_loading%402x.gif" />
+    <Content Include="Scripts\ProductGallery\fancybox\source\fancybox_loading.gif" />
+    <Content Include="Scripts\ProductGallery\fancybox\source\fancybox_overlay.png" />
+    <Content Include="Scripts\ProductGallery\fancybox\source\fancybox_sprite%402x.png" />
+    <Content Include="Scripts\ProductGallery\fancybox\source\fancybox_sprite.png" />
+    <Content Include="Scripts\ProductGallery\fancybox\source\helpers\fancybox_buttons.png" />
+    <Content Include="Scripts\ProductGallery\fancybox\source\helpers\jquery.fancybox-buttons.css" />
+    <Content Include="Scripts\ProductGallery\fancybox\source\helpers\jquery.fancybox-buttons.js" />
+    <Content Include="Scripts\ProductGallery\fancybox\source\helpers\jquery.fancybox-media.js" />
+    <Content Include="Scripts\ProductGallery\fancybox\source\helpers\jquery.fancybox-thumbs.css" />
+    <Content Include="Scripts\ProductGallery\fancybox\source\helpers\jquery.fancybox-thumbs.js" />
+    <Content Include="Scripts\ProductGallery\fancybox\source\jquery.fancybox.css" />
+    <Content Include="Scripts\ProductGallery\fancybox\source\jquery.fancybox.js" />
+    <Content Include="Scripts\ProductGallery\fancybox\source\jquery.fancybox.pack.js" />
+    <Content Include="Scripts\ProductGallery\hammer.js\1.0.5\hammer.min.js" />
+    <Content Include="Scripts\ProductGallery\hammer.js\1.0.5\jquery.hammer.min.js" />
+    <Content Include="Scripts\ProductGallery\images\gallery\original\01_b_car.jpg" />
+    <Content Include="Scripts\ProductGallery\images\gallery\original\02_o_car.jpg" />
+    <Content Include="Scripts\ProductGallery\images\gallery\original\03_r_car.jpg" />
+    <Content Include="Scripts\ProductGallery\images\gallery\original\04_g_car.jpg" />
+    <Content Include="Scripts\ProductGallery\images\gallery\preview\01_b_car.jpg" />
+    <Content Include="Scripts\ProductGallery\images\gallery\preview\02_o_car.jpg" />
+    <Content Include="Scripts\ProductGallery\images\gallery\preview\03_r_car.jpg" />
+    <Content Include="Scripts\ProductGallery\images\gallery\preview\04_g_car.jpg" />
+    <Content Include="Scripts\ProductGallery\images\gallery\thumbs\01_b_car.jpg" />
+    <Content Include="Scripts\ProductGallery\images\gallery\thumbs\02_o_car.jpg" />
+    <Content Include="Scripts\ProductGallery\images\gallery\thumbs\03_r_car.jpg" />
+    <Content Include="Scripts\ProductGallery\images\gallery\thumbs\04_g_car.jpg" />
+    <Content Include="Scripts\ProductGallery\images\logo.png" />
+    <Content Include="Scripts\ProductGallery\images\xloading.gif" />
+    <Content Include="Scripts\ProductGallery\js\foundation.min.js" />
+    <Content Include="Scripts\ProductGallery\js\foundation\foundation.dropdown.js" />
+    <Content Include="Scripts\ProductGallery\js\foundation\foundation.interchange.js" />
+    <Content Include="Scripts\ProductGallery\js\foundation\foundation.js" />
+    <Content Include="Scripts\ProductGallery\js\foundation\foundation.reveal.js" />
+    <Content Include="Scripts\ProductGallery\js\setup.js" />
+    <Content Include="Scripts\ProductGallery\js\vendor\fastclick.js" />
+    <Content Include="Scripts\ProductGallery\js\vendor\jquery.cookie.js" />
+    <Content Include="Scripts\ProductGallery\js\vendor\jquery.js" />
+    <Content Include="Scripts\ProductGallery\js\vendor\modernizr.js" />
+    <Content Include="Scripts\ProductGallery\js\vendor\placeholder.js" />
+    <Content Include="Scripts\ProductGallery\magnific-popup\css\magnific-popup.css" />
+    <Content Include="Scripts\ProductGallery\magnific-popup\js\magnific-popup.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\WebForms\DetailsView.js" />
@@ -309,6 +360,13 @@
     <Compile Include="Authentication\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ProductDetail.aspx.cs">
+      <DependentUpon>ProductDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductDetail.aspx.designer.cs">
+      <DependentUpon>ProductDetail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -340,6 +398,8 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Scripts\ProductGallery\fancybox\README.md" />
+    <Content Include="Scripts\ProductGallery\hammer.js\README.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
