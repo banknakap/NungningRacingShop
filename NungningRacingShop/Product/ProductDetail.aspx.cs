@@ -54,7 +54,7 @@ namespace NungningRacingShop
                 txtAmount.Text = "1";
 
                 navCate.InnerText = result[0].catetitle;
-                navCate.HRef = "/Home/Product/ProductCategory.aspx?product_category_id=" + result[0].product_category_id;
+                navCate.HRef = "~/Product/ProductCategory.aspx?product_category_id=" + result[0].product_category_id;
                 navProduct.InnerText = result[0].title;
                 navProduct.HRef = HttpContext.Current.Request.Url.PathAndQuery;
 

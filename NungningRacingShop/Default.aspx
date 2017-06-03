@@ -19,7 +19,7 @@
                          <div class="panel panel-default">
                               <div class="panel-heading"> <%# Eval("title") %></div>
                        <div class="panel-body">
-                           <a href="/Home/Product/ProductDetail?product_id=<%# Eval("product_id") %>"> 
+                           <a href="Product/ProductDetail?product_id=<%# Eval("product_id") %>"> 
                                 <img ="100" src="<%# getImage(Eval("image").ToString()) %>"  style="height:150px; max-width: 240px;"/> <br>
                            </a>
                  

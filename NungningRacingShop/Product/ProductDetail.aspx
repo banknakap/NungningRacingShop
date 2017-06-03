@@ -55,7 +55,7 @@
     <section id="output" style="margin-top: 5%">
         <div class="row">
             <div>
-                <a  href="/Home">Home</a>
+                <a runat="server" href="~/">Home</a>
                 <span class="glyphicon glyphicon-arrow-right"></span>
                 <a id="navCate" runat="server" ></a>
                 <span class="glyphicon glyphicon-arrow-right"></span>

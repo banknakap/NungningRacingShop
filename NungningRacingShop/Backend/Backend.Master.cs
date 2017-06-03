@@ -28,7 +28,7 @@ namespace NungningRacingShop.Backend
                     SessionApp.user_info = null;
 
                     string path = Request.Url.PathAndQuery.ToString();
-                    string return_path = path.Replace("/Home", "");
+                    string return_path = path.Replace("~/", "");
                     RedirectTo("~" + return_path);
                 }
             }

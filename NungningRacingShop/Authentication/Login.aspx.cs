@@ -67,7 +67,7 @@ namespace NungningRacingShop.Authentication
 
                 if (!string.IsNullOrEmpty(return_page))
                 {
-                    RedirectTo("~"+return_page);
+                    RedirectTo(return_page);
                 }
                 else
                 {

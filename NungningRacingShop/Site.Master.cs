@@ -32,7 +32,7 @@ namespace NungningRacingShop
                 else
                 {
                     string path = Request.Url.PathAndQuery.ToString();
-                    string return_path = path.Replace("/Home", "");
+                    string return_path = path.Replace("~/", "");
                     btn_login.HRef = "~/Authentication/Login.aspx?return_page=" + return_path;
 
                     div_login.Visible = false;
@@ -59,9 +59,9 @@ namespace NungningRacingShop
                     SessionApp.user_info = null;
 
                     string path = Request.Url.PathAndQuery.ToString();
-                    string return_path = path.Replace("/Home", "");
+                    string return_path = path.Replace("~/", "");
                     //RedirectTo("~"+ return_path);
-                    RedirectTo("~/Default.aspx");
+                    RedirectTo("~~/.aspx");
                 }
             }
             catch (Exception ex)

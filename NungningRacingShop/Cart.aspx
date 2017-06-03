@@ -7,6 +7,11 @@
             margin: 0 auto;
         }
     </style>
+
+         <a runat="server" href="~/">Home</a>
+         <span class="glyphicon glyphicon-arrow-right"></span>
+         <a id="navCart" runat="server" >Cart</a>
+
     <h2>รายการสินค้าในรถเข็น</h2>
      <label id="lbl_message" runat="server"></label>
     <asp:repeater id="rptProducts" runat="server" onitemcommand="rptProducts_ItemCommand">
@@ -19,9 +24,9 @@
                          <div class="panel panel-default">
                               <div class="panel-heading"> <%# Eval("title") %></div>
                        <div class="panel-body" >
-                           
+                            <a href="Product/ProductDetail?product_id=<%# Eval("product_id") %>"> 
                         <img ="100" src="<%# getImage(Eval("image").ToString()) %>"  style="height:150px; max-width: 240px;"/> <br>
-                          
+                          </a>
                            <div>
                         จำนวน <%# Eval("cart_amount") %> ชิ้น
                                <br>

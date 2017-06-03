@@ -27,6 +27,7 @@ namespace NungningRacingShop
             {
                 bindCartProductList();
                 bindAddress();
+                navCart.HRef = HttpContext.Current.Request.Url.PathAndQuery;
 
 
             }
@@ -79,7 +80,7 @@ namespace NungningRacingShop
                     if (SessionApp.user_info == null)
                     {
                         string path = Request.Url.PathAndQuery.ToString();
-                        string return_path = path.Replace("/Home", "");
+                        string return_path = path.Replace("/default", "");
                         RedirectTo("~/Authentication/Login.aspx?return_page=" + return_path);
                         return;
                     }

@@ -4423,7 +4423,7 @@ jQuery.extend({
 					if ( getSetInput && getSetAttribute || !ruseDefault.test( name ) ) {
 						elem[ propName ] = false;
 					// Support: IE<9
-					// Also clear defaultChecked/defaultSelected (if appropriate)
+					// Also clear defaultChecked~/Selected (if appropriate)
 					} else {
 						elem[ jQuery.camelCase( "default-" + name ) ] =
 							elem[ propName ] = false;

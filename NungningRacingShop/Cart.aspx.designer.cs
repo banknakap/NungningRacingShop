@@ -13,6 +13,15 @@ namespace NungningRacingShop {
     public partial class Cart {
         
         /// <summary>
+        /// navCart control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor navCart;
+        
+        /// <summary>
         /// lbl_message control.
         /// </summary>
         /// <remarks>

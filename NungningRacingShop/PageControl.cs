@@ -41,7 +41,7 @@ namespace NungningRacingShop
                 if (SessionApp.user_info == null)
                 {
                     string path = Request.Url.PathAndQuery.ToString();
-                    string return_path = path.Replace("/Home", "");
+                    string return_path = path.Replace("~/", "");
                     RedirectTo("~/Authentication/Login.aspx?return_page="+ return_path);
                     return;
                 }
@@ -49,7 +49,7 @@ namespace NungningRacingShop
                 {
                     if (!SessionApp.user_info.user_type.Equals(UserType.Admin.ToString()))
                     {
-                        ShowMessage(Page, "คุณไม่มีสิทธิ์เข้าใช้งานหน้านี้", getUrl("~/Default.aspx"));
+                        ShowMessage(Page, "คุณไม่มีสิทธิ์เข้าใช้งานหน้านี้", getUrl("~~/.aspx"));
                         return;
                     }
                 }
