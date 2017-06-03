@@ -42,6 +42,11 @@ namespace NungningRacingShop
             return NungningRacingShop.Utility.Utility.getImage(image_name);
         }
 
+        public string getFormatMoney(string x)
+        {
+            return NungningRacingShop.Utility.Utility.formatMoney(float.Parse(x));
+        }
+
         protected void rptProducts_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
             try

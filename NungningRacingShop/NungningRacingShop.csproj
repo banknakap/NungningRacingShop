@@ -154,7 +154,8 @@
     <Content Include="Backend\Backend.Master" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Authentication\Register.aspx" />
-    <Content Include="ProductDetail.aspx" />
+    <Content Include="Product\ProductCategory.aspx" />
+    <Content Include="Product\ProductDetail.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -360,11 +361,18 @@
     <Compile Include="Authentication\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ProductDetail.aspx.cs">
+    <Compile Include="Product\ProductCategory.aspx.cs">
+      <DependentUpon>ProductCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product\ProductCategory.aspx.designer.cs">
+      <DependentUpon>ProductCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product\ProductDetail.aspx.cs">
       <DependentUpon>ProductDetail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ProductDetail.aspx.designer.cs">
+    <Compile Include="Product\ProductDetail.aspx.designer.cs">
       <DependentUpon>ProductDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -44,7 +44,7 @@ namespace NungningRacingShop
         private void bindCartProductList()
         {
             currentCart = new List<ProductInfo>();
-
+            total_price = 0;
             foreach (var c in SessionApp.cart_session)
             {
                 ProductInfo item = ProductController.GetProduct(c.product_id, null).FirstOrDefault();
@@ -122,6 +122,12 @@ namespace NungningRacingShop
         {
             return NungningRacingShop.Utility.Utility.getImage(image_name);
         }
+
+        public string getFormatMoney(string x)
+        {
+            return NungningRacingShop.Utility.Utility.formatMoney(float.Parse(x));
+        }
+
 
         protected void rptProducts_ItemCommand(object source, RepeaterCommandEventArgs e)
         {

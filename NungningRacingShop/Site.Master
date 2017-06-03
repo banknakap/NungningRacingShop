@@ -18,6 +18,12 @@
 </head>
 <body>
 
+    <style>
+          html,body {
+             font-size:100%;
+         }
+    </style>
+
         
 
 

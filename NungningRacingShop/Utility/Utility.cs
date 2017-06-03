@@ -12,5 +12,11 @@ namespace NungningRacingShop.Utility
             string strUrl = HttpContext.Current.Request.Url.Host + VirtualPathUtility.ToAbsolute("~/Images/" + image_name);
             return HttpUtility.UrlPathEncode(HttpContext.Current.Request.Url.Scheme + "://" + strUrl);
         }
+        public static string formatMoney(float x)
+        {
+            return string.Format("{0:#,##0.00}", x);
+        }
+
+        
     }
 }

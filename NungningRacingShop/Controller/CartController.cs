@@ -35,7 +35,7 @@ namespace NungningRacingShop.Controller
             else
             {
                 var pro = ProductController.GetProduct(cart.product_id, null).FirstOrDefault();
-                if (pro.amount > cart.amount)
+                if (pro.amount >= cart.amount)
                 {
                     SessionApp.cart_session.Add(cart);
                     return true;

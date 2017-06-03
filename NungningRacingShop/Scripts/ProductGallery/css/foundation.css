@@ -1815,14 +1815,14 @@ td {
   padding: 0; }
 
 /* Default Link Styles */
-a {
+/*a {
   color: #2ba6cb;
   text-decoration: none;
   line-height: inherit; }
   a:hover, a:focus {
     color: #258faf; }
   a img {
-    border: none; }
+    border: none; }*/
 
 /* Default paragraph styles */
 p {

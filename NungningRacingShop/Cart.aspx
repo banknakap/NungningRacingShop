@@ -2,10 +2,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     
     <style>
-img{
-display: block;
-margin: 0 auto;
-}
+        img {
+            display: block;
+            margin: 0 auto;
+        }
     </style>
     <h2>รายการสินค้าในรถเข็น</h2>
      <label id="lbl_message" runat="server"></label>
@@ -19,12 +19,13 @@ margin: 0 auto;
                          <div class="panel panel-default">
                               <div class="panel-heading"> <%# Eval("title") %></div>
                        <div class="panel-body" >
-
+                           
                         <img ="100" src="<%# getImage(Eval("image").ToString()) %>"  style="height:150px; max-width: 240px;"/> <br>
+                          
                            <div>
-                        <label>จำนวน <%# Eval("cart_amount") %> ชิ้น</label>
+                        จำนวน <%# Eval("cart_amount") %> ชิ้น
                                <br>
-                               <label>ราคา <%# Eval("sum_price") %> บาท</label>
+                               <label><%# getFormatMoney(Eval("sum_price").ToString()) %> ฿</label>
                            
                             <asp:LinkButton ID="LinkButton1" runat="server" CssClass="btn btn-danger btn-sm" style="float: right;" CommandName="DEL_CART" 
                                 CommandArgument='<%# Eval("product_id") %>' OnClientClick="return confirm('คุณต้องการลบจริงหรือไม่ จริงหรือไม่');"  ToolTip="ลบ" Font-Underline="true" ><span class="glyphicon glyphicon-trash"></span></asp:LinkButton>
@@ -41,7 +42,7 @@ margin: 0 auto;
            
                 <FooterTemplate>
                     </div>
-                    <label>ราคาสุทธิ <%# total_price %> บาท</label>
+                    <label>ราคาสุทธิ <%# getFormatMoney(total_price.ToString()) %> ฿</label>
                 </FooterTemplate>
             </asp:repeater>
 

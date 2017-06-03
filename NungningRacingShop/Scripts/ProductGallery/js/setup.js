@@ -134,7 +134,7 @@
             });
            
             //Integration with magnific popup plugin
-            $('#xzoom-magnific').bind('click', function(event) {
+            $('#xzoom_magnific').bind('click', function(event) {
                 var xzoom = $(this).data('xzoom');
                 xzoom.closezoom();
                 var gallery = xzoom.gallery().cgallery;
