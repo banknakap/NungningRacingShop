@@ -26,9 +26,16 @@ namespace NungningRacingShop
         {
             if (!IsPostBack)
             {
+                bindNotice();
                 bindProductList();
 
             }
+        }
+        private void bindNotice()
+        {
+            var result = NoticeController.SearchNotice(null, null);
+            rptNotices.DataSource = result;
+            rptNotices.DataBind();
         }
 
         private void bindProductList()

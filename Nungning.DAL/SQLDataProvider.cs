@@ -136,6 +136,14 @@ namespace Nungning.DAL
         {
             return SqlHelper.ExecuteReader(ConnectionString, GetFullyQualifiedName("usp_User_GetUserByLogin"), GetNull(user_name), GetNull(password));
         }
+        public override IDataReader GetUser(string user_infoid)
+        {
+            return SqlHelper.ExecuteReader(ConnectionString, GetFullyQualifiedName("usp_User_GetUser"), GetNull(user_infoid));
+        }
+        public override IDataReader SearchUser(string user_name, string first_name)
+        {
+            return SqlHelper.ExecuteReader(ConnectionString, GetFullyQualifiedName("usp_User_SearchUser"), GetNull(user_name), GetNull(first_name));
+        }
         public override IDataReader AddUser(UserInfo user)
         {
             return SqlHelper.ExecuteReader(ConnectionString, GetFullyQualifiedName("usp_User_AddUser")
@@ -315,7 +323,7 @@ namespace Nungning.DAL
                 );
         }
 
-        public override IDataReader GetBillDetail(string bill_detail_id,string bill_id)
+        public override IDataReader GetBillDetail(string bill_detail_id, string bill_id)
         {
             return SqlHelper.ExecuteReader(ConnectionString, GetFullyQualifiedName("usp_Bill_GetBillDetail")
                 , GetNull(bill_detail_id)
@@ -327,8 +335,61 @@ namespace Nungning.DAL
 
         #endregion
 
+        #region Notice
+        public override IDataReader GetNotice(string notice_id)
+        {
+            return SqlHelper.ExecuteReader(ConnectionString, GetFullyQualifiedName("usp_Notice_GetNotice")
+                , GetNull(notice_id)
+                );
+        }
+        public override IDataReader AddNotice(NoticeInfo notice)
+        {
+            return SqlHelper.ExecuteReader(ConnectionString, GetFullyQualifiedName("usp_Notice_AddNotice")
+                , GetNull(notice.title)
+                , GetNull(notice.description)
+                , GetNull(notice.image)
+                , GetNull(notice.url)
+                , GetNull(notice.display_sort)
+                , GetNull(notice.create_by)
+                , GetNull(notice.lastupdate_by)
+                , GetNull(notice.is_del)
+                , GetNull(notice.link_page)
+                , GetNull(notice.link_param)
 
+                );
+        }
+        public override IDataReader SetNotice(NoticeInfo notice)
+        {
+            return SqlHelper.ExecuteReader(ConnectionString, GetFullyQualifiedName("usp_Notice_SetNotice")
+                , GetNull(notice.notice_id)
+                , GetNull(notice.title)
+                , GetNull(notice.description)
+                , GetNull(notice.image)
+                , GetNull(notice.url)
+                , GetNull(notice.display_sort)
+                , GetNull(notice.create_by)
+                , GetNull(notice.lastupdate_by)
+                , GetNull(notice.is_del)
+                , GetNull(notice.link_page)
+                , GetNull(notice.link_param)
+                );
+        }
+        public override IDataReader SearchNotice(string notice_id, string title)
+        {
+            return SqlHelper.ExecuteReader(ConnectionString, GetFullyQualifiedName("usp_Notice_SearchNotice")
+                , GetNull(notice_id)
+                , GetNull(title)
+                );
+        }
 
+        #endregion
+
+        public override IDataReader GetLinkPage(string link_page)
+        {
+            return SqlHelper.ExecuteReader(ConnectionString, GetFullyQualifiedName("usp_LinkPage_GetLinkPage")
+                , GetNull(link_page)
+                );
+        }
 
     }
 }

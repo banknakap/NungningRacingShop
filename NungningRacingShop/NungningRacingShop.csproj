@@ -129,12 +129,18 @@
     <Content Include="About.aspx" />
     <Content Include="Authentication\Login.aspx" />
     <Content Include="Authentication\ProfileEdit.aspx" />
+    <Content Include="Backend\Notice\NoticeAdd.aspx" />
+    <Content Include="Backend\Notice\NoticeEdit.aspx" />
+    <Content Include="Backend\Notice\NoticeList.aspx" />
     <Content Include="Backend\Product\ProductAdd.aspx" />
     <Content Include="Backend\Product\ProductCategoryAdd.aspx" />
     <Content Include="Backend\Product\ProductCategoryEdit.aspx" />
     <Content Include="Backend\Product\ProductCategoryList.aspx" />
     <Content Include="Backend\Product\ProductEdit.aspx" />
     <Content Include="Backend\Product\ProductList.aspx" />
+    <Content Include="Backend\User\UserAdd.aspx" />
+    <Content Include="Backend\User\UserEdit.aspx" />
+    <Content Include="Backend\User\UserList.aspx" />
     <Content Include="BillDetail.aspx" />
     <Content Include="Cart.aspx" />
     <Content Include="Contact.aspx" />
@@ -154,6 +160,7 @@
     <Content Include="Backend\Backend.Master" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Authentication\Register.aspx" />
+    <Content Include="Notice\NoticeDetail.aspx" />
     <Content Include="Product\ProductCategory.aspx" />
     <Content Include="Product\ProductDetail.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -213,6 +220,20 @@
     <Content Include="Scripts\ProductGallery\magnific-popup\js\magnific-popup.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\ResponsiveSlides\demo.css" />
+    <Content Include="Scripts\ResponsiveSlides\Image\1.jpg" />
+    <Content Include="Scripts\ResponsiveSlides\Image\1_thumb.jpg" />
+    <Content Include="Scripts\ResponsiveSlides\Image\2.jpg" />
+    <Content Include="Scripts\ResponsiveSlides\Image\2_thumb.jpg" />
+    <Content Include="Scripts\ResponsiveSlides\Image\3.jpg" />
+    <Content Include="Scripts\ResponsiveSlides\Image\3_thumb.jpg" />
+    <Content Include="Scripts\ResponsiveSlides\Image\bg.png" />
+    <Content Include="Scripts\ResponsiveSlides\responsiveslides.css" />
+    <Content Include="Scripts\ResponsiveSlides\responsiveslides.js" />
+    <Content Include="Scripts\ResponsiveSlides\responsiveslides.min.js" />
+    <Content Include="Scripts\ResponsiveSlides\themes\themes.css" />
+    <Content Include="Scripts\ResponsiveSlides\themes\themes.gif" />
+    <Content Include="Scripts\ResponsiveSlides\themes\themes.html" />
     <Content Include="Scripts\WebForms\DetailsView.js" />
     <Content Include="Scripts\WebForms\Focus.js" />
     <Content Include="Scripts\WebForms\GridView.js" />
@@ -271,6 +292,27 @@
     <Compile Include="Backend\Backend.Master.designer.cs">
       <DependentUpon>Backend.Master</DependentUpon>
     </Compile>
+    <Compile Include="Backend\Notice\NoticeAdd.aspx.cs">
+      <DependentUpon>NoticeAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Backend\Notice\NoticeAdd.aspx.designer.cs">
+      <DependentUpon>NoticeAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Backend\Notice\NoticeEdit.aspx.cs">
+      <DependentUpon>NoticeEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Backend\Notice\NoticeEdit.aspx.designer.cs">
+      <DependentUpon>NoticeEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Backend\Notice\NoticeList.aspx.cs">
+      <DependentUpon>NoticeList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Backend\Notice\NoticeList.aspx.designer.cs">
+      <DependentUpon>NoticeList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Backend\Product\ProductAdd.aspx.cs">
       <DependentUpon>ProductAdd.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -313,6 +355,27 @@
     <Compile Include="Backend\Product\ProductList.aspx.designer.cs">
       <DependentUpon>ProductList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Backend\User\UserAdd.aspx.cs">
+      <DependentUpon>UserAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Backend\User\UserAdd.aspx.designer.cs">
+      <DependentUpon>UserAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Backend\User\UserEdit.aspx.cs">
+      <DependentUpon>UserEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Backend\User\UserEdit.aspx.designer.cs">
+      <DependentUpon>UserEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Backend\User\UserList.aspx.cs">
+      <DependentUpon>UserList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Backend\User\UserList.aspx.designer.cs">
+      <DependentUpon>UserList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="BillDetail.aspx.cs">
       <DependentUpon>BillDetail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -349,6 +412,13 @@
     <Compile Include="Info\CartInfo.cs" />
     <Compile Include="MasterPageControl.cs">
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Notice\NoticeDetail.aspx.cs">
+      <DependentUpon>NoticeDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Notice\NoticeDetail.aspx.designer.cs">
+      <DependentUpon>NoticeDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="PageControl.cs">
       <SubType>ASPXCodeBehind</SubType>

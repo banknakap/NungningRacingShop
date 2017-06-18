@@ -109,7 +109,7 @@
                             <label>ราคาสุทธิ </label> <span style='color:#d9534f;font-size:x-large' id="lblPrice" runat="server">ราคาสุทธิ </span>
                         </div>
                         <br />
-                        <label>คุณสมบัตร</label>
+                        <label>คุณสมบัติ</label>
                         <hr>
                         <p id="divDescription" runat="server">
                         </p>

@@ -76,6 +76,8 @@ namespace Nungning.BLL.Provider
         public abstract IDataReader GetUserByLogin(string user_name, string password);
         public abstract IDataReader AddUser(UserInfo user);
         public abstract IDataReader SetUser(UserInfo user);
+        public abstract IDataReader GetUser(string user_infoid);
+        public abstract IDataReader SearchUser(string user_name, string first_name);
         #endregion
 
         #region Product
@@ -99,5 +101,15 @@ namespace Nungning.BLL.Provider
         public abstract IDataReader GetBillDetail(string bill_detail_id, string bill_id);
         #endregion
 
+        #region Notice
+
+        public abstract IDataReader GetNotice(string notice_id);
+        public abstract IDataReader AddNotice(NoticeInfo notice);
+        public abstract IDataReader SetNotice(NoticeInfo notice);
+        public abstract IDataReader SearchNotice(string notice_id, string title);
+
+        #endregion
+
+        public abstract IDataReader GetLinkPage(string link_page);
     }
 }

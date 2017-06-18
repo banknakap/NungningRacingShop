@@ -14,7 +14,7 @@
         <asp:TextBox  ID="txtTitle" CssClass="form-control" runat="server"></asp:TextBox>
     
     <asp:Button ID="btnSend" runat="server" Text="ค้นหา" CssClass="btn btn-success btn-lg submit-btn" OnClick="btnSend_Click" />
-
+    <a class="btn btn-default btn-lg submit-btn" runat="server" href="~/Backend/Product/ProductCategoryAdd">เพิ่มหมวดหมู่</a>
 
       <asp:Repeater ID="rptProductCategory" runat="server" OnItemCommand="rptProductCategory_ItemCommand">
                 <HeaderTemplate>

@@ -41,10 +41,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\BillController.cs" />
+    <Compile Include="Controller\LinkPageController.cs" />
+    <Compile Include="Controller\NoticeController.cs" />
     <Compile Include="Controller\ProductController.cs" />
     <Compile Include="Controller\UserController.cs" />
     <Compile Include="Info\BillDetailInfo.cs" />
     <Compile Include="Info\BillInfo.cs" />
+    <Compile Include="Info\LinkPageInfocs.cs" />
+    <Compile Include="Info\NoticeInfo.cs" />
     <Compile Include="Info\ProductCategoryInfo.cs" />
     <Compile Include="Info\ProductImageInfo.cs" />
     <Compile Include="Info\ProductInfo.cs" />
