@@ -1,0 +1,106 @@
+﻿#boxWebboard .boxTitle-lastupdate {
+    background: #333;
+    margin: 0 0 20px 30px;
+    padding: 10px;
+}
+
+.tableTopic-lastupdate {
+    margin: 0 0 40px 30px;
+    background: #F4F4F4;
+}
+
+.tableTopic-lastupdate2 {
+    margin: 0 0 40px 30px;
+}
+
+#boxWebboard .boxTitle-lastupdate2 {
+    background: #F4F4F4;
+    margin: 0 0 20px 30px;
+    padding: 10px;
+}
+
+.activeForums * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#boxWebboard .boxTitle-lastupdate .title {
+    color: #FFF;
+    display: inline-block;
+    margin: 0 10px 0 0;
+    padding: 0 10px;
+    font-family: 'db_helvethaica_x';
+    font-size: 22px;
+}
+
+
+#boxWebboard .boxTopic {
+    background: #fff;
+    border: #dedede 1px solid;
+    margin: 0 0 20px 30px;
+    padding: 20px 0 0;
+}
+
+#boxWebboard .boxTopic {
+    background: #fff;
+    border: #dedede 1px solid;
+    margin: 0 0 20px 30px;
+    padding: 20px 0 0;
+}
+
+    #boxWebboard .boxTopic .title.new {
+        color: #000;
+        margin: 0 20px;
+        padding: 0 0 20px 40px;
+        text-decoration: underline;
+    }
+
+    #boxWebboard .boxTopic .description {
+        color: #000;
+        margin: 0 20px;
+        padding: 0 0 20px 40px;
+    }
+
+    #boxWebboard .boxTopic .description {
+        color: #000;
+        margin: 0 20px;
+        padding: 0 0 20px 40px;
+    }
+
+#boxWebboard .boxUser {
+    background: #dedede;
+    color: #000;
+    font-family: 'db_helvethaica_x';
+    font-size: 20px;
+    line-height: 40px;
+    padding: 0 40px;
+    width: 100%;
+}
+
+#boxWebboard .boxUser {
+    background: #dedede;
+    color: #000;
+    font-family: 'db_helvethaica_x';
+    font-size: 20px;
+    line-height: 40px;
+    padding: 0 40px;
+}
+
+    #boxWebboard .boxUser .time {
+        display: inline-block;
+        margin: 0;
+        height: 40px;
+    }
+
+    #boxWebboard .boxUser .tools {
+        display: inline-block;
+        font-size: 18px;
+        margin-left: 10px;
+        border-left: 1px solid #aaa;
+    }
+
+    #boxWebboard .boxUser .name.memberSilver {
+        background: url(/site/portals/0/img/bullet/memberSilver-2.png) no-repeat right 7px;
+        padding-right: 30px;
+    }

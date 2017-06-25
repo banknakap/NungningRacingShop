@@ -384,6 +384,64 @@ namespace Nungning.DAL
 
         #endregion
 
+        #region Webboard
+        public override IDataReader AddComment(CommentInfo comment)
+        {
+            return SqlHelper.ExecuteReader(ConnectionString, GetFullyQualifiedName("usp_Webboard_AddComment")
+               , GetNull(comment.topic_id)
+               , GetNull(comment.description)
+               , GetNull(comment.create_by)
+               );
+        }
+
+        public override IDataReader AddTopic(TopicInfo topic)
+        {
+            return SqlHelper.ExecuteReader(ConnectionString, GetFullyQualifiedName("usp_Webboard_AddTopic")
+               , GetNull(topic.title)
+               , GetNull(topic.description)
+               , GetNull(topic.create_by)
+               );
+        }
+
+        public override IDataReader GetComment(string comment_id, string topic_id)
+        {
+            return SqlHelper.ExecuteReader(ConnectionString, GetFullyQualifiedName("usp_Webboard_GetComment")
+                , GetNull(comment_id)
+                , GetNull(topic_id)
+                );
+        }
+        public override IDataReader GetTopic(string topic_id)
+        {
+            return SqlHelper.ExecuteReader(ConnectionString, GetFullyQualifiedName("usp_Webboard_GetTopic")
+                , GetNull(topic_id)
+                );
+        }
+        public override IDataReader SetComment(CommentInfo comment)
+        {
+            return SqlHelper.ExecuteReader(ConnectionString, GetFullyQualifiedName("usp_Webboard_SetComment")
+                , GetNull(comment.comment_id)
+                , GetNull(comment.description)
+                , GetNull(comment.lastupdate_by)
+                , GetNull(comment.is_del)
+                , GetNull(comment.comment_id)
+                );
+        }
+        public override IDataReader SetTopic(TopicInfo topic)
+        {
+            return SqlHelper.ExecuteReader(ConnectionString, GetFullyQualifiedName("usp_Webboard_SetTopic")
+              , GetNull(topic.topic_id)
+              , GetNull(topic.title)
+              , GetNull(topic.display_sort)
+              , GetNull(topic.is_top)
+              , GetNull(topic.read_count)
+              , GetNull(topic.description)
+              , GetNull(topic.lastupdate_by)
+              , GetNull(topic.is_del)
+              );
+        }
+
+        #endregion
+
         public override IDataReader GetLinkPage(string link_page)
         {
             return SqlHelper.ExecuteReader(ConnectionString, GetFullyQualifiedName("usp_LinkPage_GetLinkPage")

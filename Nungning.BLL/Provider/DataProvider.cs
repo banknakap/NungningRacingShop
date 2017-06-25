@@ -110,6 +110,14 @@ namespace Nungning.BLL.Provider
 
         #endregion
 
+        #region Webboard
+        public abstract IDataReader AddComment(CommentInfo comment);
+        public abstract IDataReader AddTopic(TopicInfo topic);
+        public abstract IDataReader GetComment(string comment_id,string topic_id);
+        public abstract IDataReader GetTopic(string topic_id);
+        public abstract IDataReader SetComment(CommentInfo comment);
+        public abstract IDataReader SetTopic(TopicInfo topic);
+        #endregion
         public abstract IDataReader GetLinkPage(string link_page);
     }
 }

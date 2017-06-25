@@ -158,6 +158,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Backend\Backend.Master" />
+    <Content Include="Scripts\CSS\NungNing.css" />
+    <Content Include="Webboard\TopicAdd.aspx" />
+    <Content Include="Webboard\TopicDetail.aspx" />
+    <Content Include="Webboard\TopicList.aspx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Authentication\Register.aspx" />
     <Content Include="Notice\NoticeDetail.aspx" />
@@ -467,6 +471,27 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webboard\TopicAdd.aspx.cs">
+      <DependentUpon>TopicAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webboard\TopicAdd.aspx.designer.cs">
+      <DependentUpon>TopicAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webboard\TopicDetail.aspx.cs">
+      <DependentUpon>TopicDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webboard\TopicDetail.aspx.designer.cs">
+      <DependentUpon>TopicDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webboard\TopicList.aspx.cs">
+      <DependentUpon>TopicList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webboard\TopicList.aspx.designer.cs">
+      <DependentUpon>TopicList.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
