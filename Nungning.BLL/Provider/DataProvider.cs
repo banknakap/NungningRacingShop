@@ -115,6 +115,7 @@ namespace Nungning.BLL.Provider
         public abstract IDataReader AddTopic(TopicInfo topic);
         public abstract IDataReader GetComment(string comment_id,string topic_id);
         public abstract IDataReader GetTopic(string topic_id);
+        public abstract IDataReader SearchTopic(string title);
         public abstract IDataReader SetComment(CommentInfo comment);
         public abstract IDataReader SetTopic(TopicInfo topic);
         #endregion

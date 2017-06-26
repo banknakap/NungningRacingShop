@@ -141,7 +141,12 @@
     <Content Include="Backend\User\UserAdd.aspx" />
     <Content Include="Backend\User\UserEdit.aspx" />
     <Content Include="Backend\User\UserList.aspx" />
-    <Content Include="BillDetail.aspx" />
+    <Content Include="Backend\Webboard\TopicAdd.aspx" />
+    <Content Include="Backend\Webboard\CommentEdit.aspx" />
+    <Content Include="Backend\Webboard\TopicEdit.aspx" />
+    <Content Include="Backend\Webboard\TopicList.aspx" />
+    <Content Include="Bill\BillDetail.aspx" />
+    <Content Include="Bill\BillHistoryList.aspx" />
     <Content Include="Cart.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
@@ -380,12 +385,47 @@
     <Compile Include="Backend\User\UserList.aspx.designer.cs">
       <DependentUpon>UserList.aspx</DependentUpon>
     </Compile>
-    <Compile Include="BillDetail.aspx.cs">
+    <Compile Include="Backend\Webboard\TopicAdd.aspx.cs">
+      <DependentUpon>TopicAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Backend\Webboard\TopicAdd.aspx.designer.cs">
+      <DependentUpon>TopicAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Backend\Webboard\CommentEdit.aspx.cs">
+      <DependentUpon>CommentEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Backend\Webboard\CommentEdit.aspx.designer.cs">
+      <DependentUpon>CommentEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Backend\Webboard\TopicEdit.aspx.cs">
+      <DependentUpon>TopicEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Backend\Webboard\TopicEdit.aspx.designer.cs">
+      <DependentUpon>TopicEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Backend\Webboard\TopicList.aspx.cs">
+      <DependentUpon>TopicList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Backend\Webboard\TopicList.aspx.designer.cs">
+      <DependentUpon>TopicList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bill\BillDetail.aspx.cs">
       <DependentUpon>BillDetail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="BillDetail.aspx.designer.cs">
+    <Compile Include="Bill\BillDetail.aspx.designer.cs">
       <DependentUpon>BillDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bill\BillHistoryList.aspx.cs">
+      <DependentUpon>BillHistoryList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bill\BillHistoryList.aspx.designer.cs">
+      <DependentUpon>BillHistoryList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Cart.aspx.cs">
       <DependentUpon>Cart.aspx</DependentUpon>

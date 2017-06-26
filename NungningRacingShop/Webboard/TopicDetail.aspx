@@ -51,7 +51,7 @@
                         <p id="lblTime" runat="server" class="time">
                             <%# Eval("lastupdate_date","{0:dd MMM yyyy - HH:mm:ss}") %>
                         </p>
-                        <a class="btn btn-default btn-sm submit-btn" style="float: right; width: 100px;margin-top:5px;" runat="server" href="~/Webboard/TopicAdd">ตอบกลับ</a>
+                        <%--<a class="btn btn-default btn-sm submit-btn" style="float: right; width: 100px;margin-top:5px;" runat="server" href="~/Webboard/TopicAdd">ตอบกลับ</a>--%>
                     </div>
 
 

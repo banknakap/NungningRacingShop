@@ -423,7 +423,6 @@ namespace Nungning.DAL
                 , GetNull(comment.description)
                 , GetNull(comment.lastupdate_by)
                 , GetNull(comment.is_del)
-                , GetNull(comment.comment_id)
                 );
         }
         public override IDataReader SetTopic(TopicInfo topic)
@@ -437,6 +436,13 @@ namespace Nungning.DAL
               , GetNull(topic.description)
               , GetNull(topic.lastupdate_by)
               , GetNull(topic.is_del)
+              );
+        }
+
+        public override IDataReader SearchTopic(string title)
+        {
+            return SqlHelper.ExecuteReader(ConnectionString, GetFullyQualifiedName("usp_Webboard_SearchTopic")
+              , GetNull(title)
               );
         }
 

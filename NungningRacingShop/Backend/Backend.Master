@@ -39,6 +39,7 @@
                         <li><a runat="server" href="~/Backend/Product/ProductCategoryList">จัดการหมวดหมู่</a></li>
                          <li><a runat="server" href="~/Backend/Notice/NoticeList">จัดการประกาศ</a></li>
                         <li><a runat="server" href="~/Backend/User/UserList">จัดการสมาชิก</a></li>
+                         <li><a runat="server" href="~/Backend/Webboard/TopicList">จัดการเว็บบอร์ด</a></li>
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">

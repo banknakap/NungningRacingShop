@@ -15,5 +15,9 @@ namespace Nungning.BLL.Info
         public float sum_price { get; set; }
         public DateTime create_date { get; set; }
         public string create_by { get; set; }
+
+        //extra
+        public string title { get; set; }
+        public string description { get; set; }
     }
 }

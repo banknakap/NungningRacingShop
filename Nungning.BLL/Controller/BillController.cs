@@ -22,14 +22,14 @@ namespace Nungning.BLL.Controller
             return CBO.FillObject<BillDetailInfo>(DataProvider.Instance().AddBillDetail( bill_id,  product_id,  amount,  sum_price,  create_by));
         }
 
-        public static BillInfo GetBill(string bill_id,string user_infoid)
+        public static List<BillInfo> GetBill(string bill_id,string user_infoid)
         {
-            return CBO.FillObject<BillInfo>(DataProvider.Instance().GetBill(bill_id, user_infoid));
+            return CBO.FillCollection<BillInfo>(DataProvider.Instance().GetBill(bill_id, user_infoid));
         }
 
-        public static BillDetailInfo GetBillDetail(string bill_detail_id, string bill_id)
+        public static List<BillDetailInfo> GetBillDetail(string bill_detail_id, string bill_id)
         {
-            return CBO.FillObject<BillDetailInfo>(DataProvider.Instance().GetBillDetail(bill_detail_id, bill_id));
+            return CBO.FillCollection<BillDetailInfo>(DataProvider.Instance().GetBillDetail(bill_detail_id, bill_id));
         }
 
     }
