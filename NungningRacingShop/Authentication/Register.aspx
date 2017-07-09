@@ -45,6 +45,9 @@
         <label>นามสกุล: <span class="red">*</span> </label>
         <asp:TextBox ID="txtLastName" CssClass="form-control" runat="server" onkeypress="return isAlphabet(event);"></asp:TextBox>
 
+        <label>อีเมล์: <span class="red">*</span> </label>
+        <asp:TextBox ID="txtEmail" CssClass="form-control" runat="server"></asp:TextBox>
+
         <label>เพศ: <span class="red">*</span></label>
         <label class="radio-inline">
             <asp:RadioButton ID="rdoMale" runat="server" Checked="True" GroupName="RDO_SEX" />
@@ -60,5 +63,5 @@
         <asp:TextBox ID="txtAddress" TextMode="multiline" Columns="50" Rows="5" CssClass="form-control" runat="server"></asp:TextBox>
     </div>
 
-       <asp:Button ID="btnSend" runat="server" Text="สมัครสมาชิก" ValidationGroup="RegisterGold" CssClass="btn btn-success btn-lg submit-btn" OnClick="btnSend_Click" />
+    <asp:Button ID="btnSend" runat="server" Text="สมัครสมาชิก" ValidationGroup="RegisterGold" CssClass="btn btn-success btn-lg submit-btn" OnClick="btnSend_Click" />
 </asp:Content>

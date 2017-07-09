@@ -120,5 +120,12 @@ namespace Nungning.BLL.Provider
         public abstract IDataReader SetTopic(TopicInfo topic);
         #endregion
         public abstract IDataReader GetLinkPage(string link_page);
+
+        #region Promotion
+        public abstract IDataReader GetPromotion(string promotion_id);
+        public abstract IDataReader AddPromotion(PromotionInfo promotion);
+        public abstract IDataReader SetPromotion(PromotionInfo promotion);
+        public abstract IDataReader SearchPromotion(string promotion_id, string title);
+        #endregion
     }
 }

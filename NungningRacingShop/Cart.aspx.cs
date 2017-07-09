@@ -109,6 +109,21 @@ namespace NungningRacingShop
                 var resultbill = BillController.AddBillDetail(bill.bill_id, c.product_id, c.cart_amount, (c.cart_amount * c.price), user_name);
                 bills.Add(resultbill);
             }
+
+            var billInfo = BillController.GetBill(bill.bill_id, user_infoid);
+            if (bill != null && billInfo.Count > 0)
+            {
+                var currentBill = billInfo[0];
+                string contentMail = "ท่านได้มีรายการสั่งซื้อ";
+                contentMail += "<br/> หมายเลขใบเสร็จที่ : " + currentBill.bill_code.ToString("000000#");
+                contentMail += "<br/> ท่านสามารถเข้าดูรายการซื้อขายได้ที่ : <a href='http://www.nungningracingshop.com/Bill/BillDetail?bill_id=" + currentBill.bill_id+"'> คลิกที่นี่ </a>";
+                contentMail += "<br/><br/> ขอขอบพระคุณท่านลูกค้าที่อุดหนุนร้าน NungNingRacingShop";
+                MailController.sendEmail(SessionApp.user_info.email, "รายการสั่งซื้อ", contentMail);
+                RedirectTo("~/Bill/BillDetail?bill_id=" + currentBill.bill_id);
+            }
+
+            
+
         }
 
         private string Onvalidate()

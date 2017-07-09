@@ -37,8 +37,11 @@
         <asp:TextBox ID="txtPassword" CssClass="form-control" runat="server" type="password"></asp:TextBox>
 
     </div>
-        <div>
-       <asp:Button ID="btnSend" runat="server" Text="ล็อคอิน"  CssClass="btn btn-success btn-lg submit-btn" OnClick="btnSend_Click" />
-    <asp:Button ID="btmCancel" runat="server" Text="ยกเลิก" CssClass="btn btn-danger btn-lg submit-btn" OnClick="btnSend_Click" />
-     </div>
+    <div>
+        <a runat="server" href="~/Authentication/Register">สมัครสมาชิกใหม่</a>
+        <br />
+        <asp:Button ID="btnSend" runat="server" Text="ล็อคอิน" CssClass="btn btn-default btn-mg submit-btn" OnClick="btnSend_Click" />
+        <asp:Button ID="btmCancel" runat="server" Text="ยกเลิก" CssClass="btn btn-default btn-mg submit-btn" OnClick="btnSend_Click" />
+
+    </div>
 </asp:Content>

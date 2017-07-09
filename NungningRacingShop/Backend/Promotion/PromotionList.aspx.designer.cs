@@ -7,45 +7,36 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace NungningRacingShop {
+namespace NungningRacingShop.Backend.Promotion {
     
     
-    public partial class BillDetail {
+    public partial class PromotionList {
         
         /// <summary>
-        /// pReceiptCode control.
+        /// txtTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl pReceiptCode;
+        protected global::System.Web.UI.WebControls.TextBox txtTitle;
         
         /// <summary>
-        /// pAddress control.
+        /// btnSend control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl pAddress;
+        protected global::System.Web.UI.WebControls.Button btnSend;
         
         /// <summary>
-        /// pCreateDate control.
+        /// rptPromotions control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl pCreateDate;
-        
-        /// <summary>
-        /// rptBillDetail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptBillDetail;
+        protected global::System.Web.UI.WebControls.Repeater rptPromotions;
     }
 }

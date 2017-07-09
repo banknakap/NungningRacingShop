@@ -35,17 +35,17 @@
 
     <h1 align="center">NungNing RacingShop</h1>
     <div style="width: 50%; margin: 0 auto;">
-        <p>ที่อยู่ หกดกหดกหดหกดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดด</p>
-        <p>ที่อยู่ หกดกหดกหดหกดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดด</p>
-        <p>ที่อยู่ หกดกหดกหดหกดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดดด</p>
-      
+        <p>One Microsoft Way</p>
+        <p>Redmond, WA 98052-6399</p>
+        <p>P: 425.555.0100 </p>
+
     </div>
 
     <hr style="width: 70%" />
-      <h3 align="center">ใบเสร็จ</h3>
+    <h3 align="center">ใบเสร็จ</h3>
     <table align="center" class="table table-bordered table-bg radius" cellspacing="0" style="width: 70%; border-collapse: collapse;">
         <tbody>
-            <tr >
+            <tr>
 
                 <td style="width: 61%;"></td>
                 <td align="right" style="width: 20%;">
@@ -93,15 +93,16 @@
 
             <tr>
 
-                <td style="width: 61%;">
-                </td>
+                <td style="width: 61%;"></td>
                 <td align="center" style="width: 5%;">ราคาสุทธิ</td>
-                <td align="right" style="width: 20%;"><p><%# total_price.ToString("#,##0.##") %></p></td>
+                <td align="right" style="width: 20%;">
+                    <p><%# total_price.ToString("#,##0.##") %></p>
+                </td>
             </tr>
             </tbody>
                 </table>
         </FooterTemplate>
     </asp:Repeater>
 
-    <asp:Button ID="btnSend" runat="server" Text="ส่งเมล" ValidationGroup="RegisterGold" CssClass="btn btn-success btn-lg submit-btn" OnClick="btnSend_Click" />
+   
 </asp:Content>

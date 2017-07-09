@@ -63,6 +63,7 @@ namespace NungningRacingShop.Authentication
             SessionApp.user_info.first_name = txtFirstName.Text;
             SessionApp.user_info.last_name = txtLastName.Text;
             SessionApp.user_info.address = txtAddress.Text;
+            SessionApp.user_info.email = txtEmail.Text;
             SessionApp.user_info.gender = (rdoMale.Checked) ? 0 : 1;
             var result = UserController.SetUser(SessionApp.user_info);
             if (result!=null)
@@ -83,6 +84,7 @@ namespace NungningRacingShop.Authentication
             if (string.IsNullOrEmpty(txtFirstName.Text)) { errMsg = "กรุณาระบุ ชื่อ"; return errMsg; }
             if (string.IsNullOrEmpty(txtLastName.Text)) { errMsg = "กรุณาระบุ นามสกุล"; return errMsg; }
             if (string.IsNullOrEmpty(txtAddress.Text)) { errMsg = "กรุณาระบุ ที่อยู่"; return errMsg; }
+            if (string.IsNullOrEmpty(txtEmail.Text)) { errMsg = "กรุณาระบุ อีเมล์"; return errMsg; }
             return errMsg;
         }
     }

@@ -152,6 +152,7 @@ namespace Nungning.DAL
                 , GetNull(user.user_type)
                 , GetNull(user.first_name)
                 , GetNull(user.last_name)
+                , GetNull(user.email)
                 , GetNull(user.gender)
                 , GetNull(user.address)
                 , GetNull(user.create_date)
@@ -170,6 +171,7 @@ namespace Nungning.DAL
                 , GetNull(user.user_type)
                 , GetNull(user.first_name)
                 , GetNull(user.last_name)
+                  , GetNull(user.email)
                 , GetNull(user.gender)
                 , GetNull(user.address)
                 , GetNull(user.lastupdate_date)
@@ -455,5 +457,54 @@ namespace Nungning.DAL
                 );
         }
 
+        #region Promotion
+
+        public override IDataReader GetPromotion(string promotion_id)
+        {
+            return SqlHelper.ExecuteReader(ConnectionString, GetFullyQualifiedName("usp_Promotion_GetPromotion")
+              , GetNull(promotion_id)
+              );
+        }
+        public override IDataReader AddPromotion(PromotionInfo promotion)
+        {
+            return SqlHelper.ExecuteReader(ConnectionString, GetFullyQualifiedName("usp_Promotion_AddPromotion")
+            , GetNull(promotion.promotion_code)
+            , GetNull(promotion.promotion_type)
+            , GetNull(promotion.discount_percent)
+            , GetNull(promotion.discount_value)
+            , GetNull(promotion.free_product_id)
+            , GetNull(promotion.free_amount)
+            , GetNull(promotion.create_by)
+            , GetNull(promotion.title)
+            , GetNull(promotion.description)
+            , GetNull(promotion.image)
+            );
+        }
+        public override IDataReader SetPromotion(PromotionInfo promotion)
+        {
+            return SqlHelper.ExecuteReader(ConnectionString, GetFullyQualifiedName("usp_Promotion_SetPromotion")
+            , GetNull(promotion.promotion_id)
+            , GetNull(promotion.promotion_code)
+            , GetNull(promotion.promotion_type)
+            , GetNull(promotion.discount_percent)
+            , GetNull(promotion.discount_value)
+            , GetNull(promotion.free_product_id)
+            , GetNull(promotion.free_amount)
+            , GetNull(promotion.lastupdate_by)
+            , GetNull(promotion.title)
+            , GetNull(promotion.description)
+            , GetNull(promotion.image)
+            , GetNull(promotion.is_del)
+            );
+        }
+        public override IDataReader SearchPromotion(string promotion_id, string title)
+        {
+            return SqlHelper.ExecuteReader(ConnectionString, GetFullyQualifiedName("usp_Promotion_SearchPromotion")
+             , GetNull(promotion_id)
+              , GetNull(title)
+             );
+        }
+
+        #endregion
     }
 }

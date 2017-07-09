@@ -1,5 +1,6 @@
 ﻿using Nungning.BLL.Controller;
 using Nungning.BLL.Info;
+using NungningRacingShop.Controller;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +22,10 @@ namespace NungningRacingShop.Authentication
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (SessionApp.user_info != null)
+            {
+                RedirectTo("~/Default.aspx");
+            }
         }
 
 
@@ -51,6 +55,7 @@ namespace NungningRacingShop.Authentication
             user_info.password = txtPassword.Text;
             user_info.first_name = txtFirstName.Text;
             user_info.last_name = txtLastName.Text;
+            user_info.email = txtEmail.Text;
             user_info.gender = (rdoMale.Checked) ? 0 : 1;
             user_info.address = txtAddress.Text;
             user_info.create_by = txtUserName.Text;
@@ -77,6 +82,7 @@ namespace NungningRacingShop.Authentication
             if (string.IsNullOrEmpty(txtRepassword.Text)) { errMsg = "กรุณาระบุ Re-Password"; return errMsg; }
             if (string.IsNullOrEmpty(txtFirstName.Text)) { errMsg = "กรุณาระบุ ชื่อ"; return errMsg; }
             if (string.IsNullOrEmpty(txtLastName.Text)) { errMsg = "กรุณาระบุ นามสกุล"; return errMsg; }
+            if (string.IsNullOrEmpty(txtEmail.Text)) { errMsg = "กรุณาระบุ อีเมล์"; return errMsg; }
             if (string.IsNullOrEmpty(txtAddress.Text)) { errMsg = "กรุณาระบุ ที่อยู่"; return errMsg; }
             return errMsg;
         }

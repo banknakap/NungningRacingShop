@@ -23,7 +23,7 @@
                 <itemtemplate>
         <li>
             <a href="Notice/NoticeDetail?notice_id=<%# Eval("notice_id") %>">
-          <img style="max-height:600px;" src="<%# getImage(Eval("image").ToString()) %>" alt="">
+          <img style="max-height:400px;" src="<%# getImage(Eval("image").ToString()) %>" alt="">
           <p class="caption"><%# Eval("title") %></p>
             </a>
         </li>
