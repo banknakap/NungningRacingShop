@@ -28,32 +28,37 @@
     </script>
     <div>
 
-        <label>ประกาศ: <span class="red">*</span> </label>
-        <asp:TextBox  ID="txtTitle" CssClass="form-control" runat="server"></asp:TextBox>
-        <label>คำอธิบาย : <span class="red">*</span> </label>
-        <asp:TextBox 
-            ID="txtDesciption" TextMode="multiline" Columns="50" Rows="5" CssClass="form-control" runat="server"></asp:TextBox>
-       <asp:FileUpload ID="fileImage" runat="server" />
-        <asp:Label ID="listofuploadedfiles" runat="server" />
-         <br>
-        <asp:Image ID="imgNotice" runat="server" style="height:128px;" /> 
-        <asp:HiddenField ID="imgName" runat="server" />
+         <label>รหัสโปรโมชั่น: <span class="red">*</span> </label>
+        <asp:TextBox ID="txtPromotionCode" CssClass="form-control" runat="server"></asp:TextBox>
+        <label>ประเภทโปรโมชั่น </label>
         <br>
-        <label>url: <span class="red">*</span> </label>
-        <asp:TextBox  ID="txtUrl" CssClass="form-control" runat="server"></asp:TextBox>
-           <label>เรียงลำดับ: <span class="red">*</span> </label>
-        <asp:TextBox  ID="txtDisplaySort" CssClass="form-control" runat="server"></asp:TextBox>
-
-          <label>LinkPage <span style="color: red;">*</span> </label>
-        <br>
-        <asp:DropDownList ID="ddlLinkPage" runat="server">
+        <asp:DropDownList ID="ddlPromotonType" CssClass="form-control" runat="server">
         </asp:DropDownList>
         <br>
-           <label>LinkParam: <span class="red">*</span> </label>
-        <asp:TextBox  ID="txtLinkParam" CssClass="form-control" runat="server"></asp:TextBox>
+        <label>ส่วนลดเปอเซ็น:  </label>
+        <asp:TextBox ID="txtDiscountPercent" CssClass="form-control" runat="server" onkeypress="return isNumeric(event);"></asp:TextBox>
+        <label>ส่วนลดราคาเต็ม: </label>
+        <asp:TextBox ID="txtDiscountValue" CssClass="form-control" runat="server" onkeypress="return isNumeric(event);"></asp:TextBox>
+        <label>รหัสสินค้าที่แถม:  </label>
+        <asp:TextBox ID="txtFreeProductId" CssClass="form-control" runat="server"></asp:TextBox>
+        <label>จำนวนที่แถม:  </label>
+        <asp:TextBox ID="txtFreeAmount" CssClass="form-control" runat="server" onkeypress="return isNumeric(event);"></asp:TextBox>
+
+        <label>ชื่อโปรโมชั่น: <span class="red">*</span> </label>
+        <asp:TextBox ID="txtTitle" CssClass="form-control" runat="server"></asp:TextBox>
+        <label>คำอธิบาย : <span class="red">*</span> </label>
+        <asp:TextBox
+            ID="txtDesciption" TextMode="multiline" Columns="50" Rows="5" CssClass="form-control" runat="server"></asp:TextBox>
+        <label>รูปภาพ: </label>
+        <asp:Image ID="imgPromotion" runat="server" style="height:128px;" /> 
+        <asp:HiddenField ID="imgName" runat="server" />
+        <br>
+        <asp:FileUpload ID="fileImage" runat="server" />
+        <asp:Label ID="listofuploadedfiles" runat="server" />
+        <br />
 
     </div>
 
-    <asp:Button ID="btnSend" runat="server" Text="แก้ไขประกาศ" CssClass="btn btn-success btn-lg submit-btn" OnClick="btnSend_Click" />
+    <asp:Button ID="btnSend" runat="server" Text="แก้ไข" CssClass="btn btn-success btn-mg submit-btn" OnClick="btnSend_Click" />
 
 </asp:Content>

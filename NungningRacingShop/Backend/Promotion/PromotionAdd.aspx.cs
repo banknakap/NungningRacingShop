@@ -32,12 +32,11 @@ namespace NungningRacingShop.Backend.Promotion
         private const string UnSelected = "------- กรุณาเลือก ---------";
         private void bindDllPromotionType()
         {
-            var result = LinkPageController.GetLinkPage(null);
-            ddlLinkPage.DataSource = result;
-            ddlLinkPage.DataValueField = "link_page";
-            ddlLinkPage.DataTextField = "description";
-            ddlLinkPage.DataBind();
-            ddlLinkPage.Items.Insert(0, new ListItem(UnSelected, "0"));
+            ddlPromotonType.DataBind();
+            ddlPromotonType.Items.Insert(0, new ListItem(UnSelected, "0"));
+            ddlPromotonType.Items.Insert(1, new ListItem("ส่วนลดแบบเปอเซ็น", "1"));
+            ddlPromotonType.Items.Insert(2, new ListItem("ส่วนลดแบบราคาเต็ม", "2"));
+            ddlPromotonType.Items.Insert(3, new ListItem("แถมสินค้า", "3"));
 
 
         }
@@ -49,7 +48,7 @@ namespace NungningRacingShop.Backend.Promotion
                 string resultValidate = Onvalidate();
                 if (string.IsNullOrEmpty(resultValidate))
                 {
-                    addNotice();
+                    addPromotion();
                 }
                 else
                     ShowMessage(Page, resultValidate);
@@ -60,11 +59,27 @@ namespace NungningRacingShop.Backend.Promotion
             }
         }
 
-        private void addNotice()
+        private void addPromotion()
         {
-            NoticeInfo notice = new NoticeInfo();
-            notice.title = txtTitle.Text;
-            notice.description = txtDesciption.Text;
+            PromotionInfo promotion = new PromotionInfo();
+            promotion.promotion_code = txtPromotionCode.Text;
+            
+            promotion.promotion_type = int.Parse(ddlPromotonType.SelectedValue);
+            float percent;
+            float.TryParse(txtDiscountPercent.Text, out percent);
+            promotion.discount_percent = percent;
+
+            float value;
+            float.TryParse(txtDiscountValue.Text, out value);
+
+            promotion.discount_value = value;
+            promotion.free_product_id = txtFreeProductId.Text;
+            int free;
+            int.TryParse(txtFreeAmount.Text, out free);
+
+           promotion.free_amount = free;
+            promotion.title = txtTitle.Text;
+            promotion.description = txtDesciption.Text;
 
             if (fileImage.HasFile)
             {
@@ -73,25 +88,15 @@ namespace NungningRacingShop.Backend.Promotion
                 string newNameImage = Guid.NewGuid().ToString();
                 current.SaveAs(System.IO.Path.Combine(Server.MapPath("~/Images/"), newNameImage + exttension));
                 listofuploadedfiles.Text += String.Format("{0}<br />", newNameImage + exttension);
-
-                notice.image = newNameImage + exttension;
-
+                promotion.image = newNameImage + exttension;
             }
-
-            notice.url = txtUrl.Text;
-            int display;
-            int.TryParse(txtDisplaySort.Text,out display);
-            notice.display_sort = display;
-            notice.create_by = (SessionApp.user_info == null) ? "No Login" : SessionApp.user_info.user_name;
-            notice.lastupdate_by = (SessionApp.user_info == null) ? "No Login" : SessionApp.user_info.user_name;
-            notice.link_page = int.Parse(ddlLinkPage.SelectedValue);
-            notice.link_param = txtLinkParam.Text;
-
-            var result = NoticeController.AddNotice(notice);
+            promotion.create_by = (SessionApp.user_info == null) ? "No Login" : SessionApp.user_info.user_name;
+            promotion.lastupdate_by = (SessionApp.user_info == null) ? "No Login" : SessionApp.user_info.user_name;
+            var result = PromotionController.AddPromotion(promotion);
 
             if (result == null)
             {
-                ShowMessage(Page, "ชื่อประกาศนี้มีอยู่ในระบบแล้ว");
+                ShowMessage(Page, "เพิ่มผิดพลาด");
             }
             else
             {
@@ -103,6 +108,7 @@ namespace NungningRacingShop.Backend.Promotion
         private string Onvalidate()
         {
             string errMsg = "";
+            if (string.IsNullOrEmpty(txtPromotionCode.Text)) { errMsg = "กรุณาระบุ ชื่อหมวดหมู่"; return errMsg; }
             if (string.IsNullOrEmpty(txtTitle.Text)) { errMsg = "กรุณาระบุ ชื่อหมวดหมู่"; return errMsg; }
             if (string.IsNullOrEmpty(txtDesciption.Text)) { errMsg = "กรุณาระบุ คำอธิบาย"; return errMsg; }
 

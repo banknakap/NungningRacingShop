@@ -49,6 +49,15 @@ namespace NungningRacingShop {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl submit_div;
         
         /// <summary>
+        /// txtPromotionCode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPromotionCode;
+        
+        /// <summary>
         /// txtAddress control.
         /// </summary>
         /// <remarks>

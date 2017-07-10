@@ -15,6 +15,10 @@ namespace Nungning.BLL.Controller
         {
             return CBO.FillCollection<PromotionInfo>(DataProvider.Instance().GetPromotion(promotion_id));
         }
+        public static PromotionInfo GetPromotionByPromotionCode(string promotion_code)
+        {
+            return CBO.FillObject<PromotionInfo>(DataProvider.Instance().GetPromotionByPromotionCode(promotion_code));
+        }
         public static List<PromotionInfo> SearchPromotion(string promotion_id,string title)
         {
             return CBO.FillCollection<PromotionInfo>(DataProvider.Instance().SearchPromotion(promotion_id,title));

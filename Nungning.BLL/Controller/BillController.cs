@@ -12,9 +12,9 @@ namespace Nungning.BLL.Controller
     public class BillController
     {
 
-        public static BillInfo AddBill(string user_infoid,float total_price,string address,string create_by)
+        public static BillInfo AddBill(string user_infoid,float total_price,string address,string promotion_id,float net_price,string create_by)
         {
-            return CBO.FillObject<BillInfo>(DataProvider.Instance().AddBill(user_infoid,total_price,address,create_by));
+            return CBO.FillObject<BillInfo>(DataProvider.Instance().AddBill(user_infoid,total_price,address,promotion_id, net_price, create_by));
         }
 
         public static BillDetailInfo AddBillDetail(string bill_id, string product_id, int amount, float sum_price,string create_by)

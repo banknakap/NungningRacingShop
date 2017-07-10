@@ -53,7 +53,12 @@
 
     <div id="submit_div" runat="server" class="row">
         <div class="col-md-6" style="float: right;">
+              <div class="input-group" >
+                 <span class="input-group-addon">รหัสโปรโมชั่น</span>
+                 <asp:TextBox ID="txtPromotionCode" CssClass="form-control" runat="server"></asp:TextBox>
+              </div>
              <div class="input-group" >
+             
         <span class="input-group-addon">ที่อยู่</span>
         <asp:TextBox ID="txtAddress" style="width:100%" TextMode="multiline" Columns="50" Rows="5" CssClass="form-control" runat="server"></asp:TextBox>
                  </div>

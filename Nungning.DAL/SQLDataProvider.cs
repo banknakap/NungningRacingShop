@@ -297,12 +297,14 @@ namespace Nungning.DAL
         #endregion
 
         #region Bill
-        public override IDataReader AddBill(string user_infoid, float total_price, string address, string create_by)
+        public override IDataReader AddBill(string user_infoid, float total_price, string address,string promotion_id,float net_price, string create_by)
         {
             return SqlHelper.ExecuteReader(ConnectionString, GetFullyQualifiedName("usp_Bill_AddBill")
                 , GetNull(user_infoid)
                 , GetNull(total_price)
                 , GetNull(address)
+                , GetNull(promotion_id)
+                , GetNull(net_price)
                 , GetNull(create_by)
                 );
         }
@@ -463,6 +465,12 @@ namespace Nungning.DAL
         {
             return SqlHelper.ExecuteReader(ConnectionString, GetFullyQualifiedName("usp_Promotion_GetPromotion")
               , GetNull(promotion_id)
+              );
+        }
+        public override IDataReader GetPromotionByPromotionCode(string promotion_code)
+        {
+            return SqlHelper.ExecuteReader(ConnectionString, GetFullyQualifiedName("usp_Promotion_GetPromotionByPromotionCode")
+              , GetNull(promotion_code)
               );
         }
         public override IDataReader AddPromotion(PromotionInfo promotion)

@@ -3,6 +3,7 @@ using Nungning.BLL.Info;
 using NungningRacingShop.Controller;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -21,40 +22,39 @@ namespace NungningRacingShop.Backend.Promotion
             return true;
         }
 
-        private string notice_id
+        private string promotion_id
         {
             set
             {
-                ViewState["notice_id"] = value;
+                ViewState["promotion_id"] = value;
             }
             get
             {
-                return (string)ViewState["notice_id"];
+                return (string)ViewState["promotion_id"];
             }
         }
 
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            notice_id = Request.QueryString["notice_id"];
+            promotion_id = Request.QueryString["promotion_id"];
             if (!IsPostBack)
             {
-                if (string.IsNullOrEmpty(notice_id))
+                if (string.IsNullOrEmpty(promotion_id))
                     return;
-                bindDllLinkPage();
-                bindNotice();
+                bindDDLPromotionType();
+                bindPromotion();
             }
 
         }
         private const string UnSelected = "------- กรุณาเลือก ---------";
-        private void bindDllLinkPage()
+        private void bindDDLPromotionType()
         {
-            var result = LinkPageController.GetLinkPage(null);
-            ddlLinkPage.DataSource = result;
-            ddlLinkPage.DataValueField = "link_page";
-            ddlLinkPage.DataTextField = "description";
-            ddlLinkPage.DataBind();
-            ddlLinkPage.Items.Insert(0, new ListItem(UnSelected, "0"));
+            ddlPromotonType.DataBind();
+            ddlPromotonType.Items.Insert(0, new ListItem(UnSelected, "0"));
+            ddlPromotonType.Items.Insert(1, new ListItem("ส่วนลดแบบเปอเซ็น", "1"));
+            ddlPromotonType.Items.Insert(2, new ListItem("ส่วนลดแบบราคาเต็ม", "2"));
+            ddlPromotonType.Items.Insert(3, new ListItem("แถมสินค้า", "3"));
 
 
         }
@@ -79,65 +79,80 @@ namespace NungningRacingShop.Backend.Promotion
 
         private void setNotice()
         {
-            NoticeInfo notice = new NoticeInfo();
-            notice.notice_id = notice_id;
-            notice.title = txtTitle.Text;
-            notice.description = txtDesciption.Text;
+            PromotionInfo promotion = new PromotionInfo();
+            promotion.promotion_id = promotion_id;
+            promotion.promotion_code = txtPromotionCode.Text;
+
+            promotion.promotion_type = int.Parse(ddlPromotonType.SelectedValue);
+            float percent;
+            float.TryParse(txtDiscountPercent.Text, out percent);
+            promotion.discount_percent = percent;
+
+            float value;
+            float.TryParse(txtDiscountValue.Text, out value);
+
+            promotion.discount_value = value;
+            promotion.free_product_id = txtFreeProductId.Text;
+            int free;
+            int.TryParse(txtFreeAmount.Text, out free);
+
+            promotion.free_amount = free;
+            promotion.title = txtTitle.Text;
+            promotion.description = txtDesciption.Text;
+            promotion.image = imgName.Value;
 
             if (fileImage.HasFile)
             {
+
                 var current = fileImage.PostedFile;
                 string exttension = System.IO.Path.GetExtension(current.FileName);
                 string newNameImage = Guid.NewGuid().ToString();
                 current.SaveAs(System.IO.Path.Combine(Server.MapPath("~/Images/"), newNameImage + exttension));
                 listofuploadedfiles.Text += String.Format("{0}<br />", newNameImage + exttension);
+                promotion.image = newNameImage + exttension;
 
-                notice.image = newNameImage + exttension;
-
+                /*if (File.Exists(System.IO.Path.Combine(Server.MapPath("~/Images/"), imgName.Value)))
+                {
+                    File.Delete(System.IO.Path.Combine(Server.MapPath("~/Images/"), imgName.Value));
+                }*/
             }
-            else
-            {
-                notice.image = imgName.Value;
-            }
-
-            notice.url = txtUrl.Text;
-            int display;
-            int.TryParse(txtDisplaySort.Text, out display);
-            notice.display_sort = display;
-            notice.create_by = (SessionApp.user_info == null) ? "No Login" : SessionApp.user_info.user_name;
-            notice.lastupdate_by = (SessionApp.user_info == null) ? "No Login" : SessionApp.user_info.user_name;
-            notice.link_page = int.Parse(ddlLinkPage.SelectedValue);
-            notice.link_param = txtLinkParam.Text;
-
-            var result = NoticeController.SetNotice(notice);
-
+            promotion.lastupdate_by = (SessionApp.user_info == null) ? "No Login" : SessionApp.user_info.user_name;
+            var result = PromotionController.SetPromotion(promotion);
 
             if (result == null)
             {
-                ShowMessage(Page, "ชื่อประกาศนี้มีอยู่ในระบบแล้ว");
+                ShowMessage(Page, "แก้ไขผิดพลาด");
             }
             else
             {
-                bindNotice();
-                ShowMessage(Page, "แก้สำเร็จ");
+                bindPromotion();
+                ShowMessage(Page, "แก้ไขสำเร็จ");
             }
+
+
 
         }
 
 
-        private void bindNotice()
+        private void bindPromotion()
         {
-            var current = NoticeController.GetNotice(notice_id);
-            if (current.Count > 0)
+            var result = PromotionController.GetPromotion(promotion_id);
+            if (result.Count > 0)
             {
-                txtTitle.Text = current[0].title;
-                txtDesciption.Text = current[0].description;
-                imgNotice.ImageUrl = getImage(current[0].image);
-                txtDisplaySort.Text = current[0].display_sort.ToString();
-                ddlLinkPage.SelectedValue = current[0].link_page.ToString();
-                txtLinkParam.Text = current[0].link_param;
-
-                imgName.Value = current[0].image;
+                var current = result[0];
+                if (current != null)
+                {
+                    txtPromotionCode.Text = current.promotion_code;
+                    ddlPromotonType.SelectedValue = current.promotion_type.ToString();
+                    txtDiscountPercent.Text = current.discount_percent.ToString();
+                    txtDiscountValue.Text = current.discount_value.ToString();
+                    txtFreeProductId.Text = current.free_product_id;
+                    txtFreeAmount.Text = current.free_amount.ToString();
+                    txtTitle.Text = current.title;
+                    txtDesciption.Text = current.description;
+                    imgPromotion.ImageUrl = getImage(current.image);
+                    imgName.Value = current.image;
+                }
             }
             
         }
@@ -149,6 +164,7 @@ namespace NungningRacingShop.Backend.Promotion
         private string Onvalidate()
         {
             string errMsg = "";
+            if (string.IsNullOrEmpty(txtPromotionCode.Text)) { errMsg = "กรุณาระบุ ชื่อหมวดหมู่"; return errMsg; }
             if (string.IsNullOrEmpty(txtTitle.Text)) { errMsg = "กรุณาระบุ ชื่อหมวดหมู่"; return errMsg; }
             if (string.IsNullOrEmpty(txtDesciption.Text)) { errMsg = "กรุณาระบุ คำอธิบาย"; return errMsg; }
 

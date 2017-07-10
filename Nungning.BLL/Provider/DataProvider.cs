@@ -95,7 +95,7 @@ namespace Nungning.BLL.Provider
         #endregion
 
         #region Bill
-        public abstract IDataReader AddBill(string user_infoid,float total_price, string address, string create_by);
+        public abstract IDataReader AddBill(string user_infoid,float total_price, string address,string promotion_id,float net_price, string create_by);
         public abstract IDataReader AddBillDetail(string bill_id, string product_id, int amount, float sum_price, string create_by);
         public abstract IDataReader GetBill(string bill_id,string user_infoid);
         public abstract IDataReader GetBillDetail(string bill_detail_id, string bill_id);
@@ -122,6 +122,7 @@ namespace Nungning.BLL.Provider
         public abstract IDataReader GetLinkPage(string link_page);
 
         #region Promotion
+        public abstract IDataReader GetPromotionByPromotionCode(string promotion_code);
         public abstract IDataReader GetPromotion(string promotion_id);
         public abstract IDataReader AddPromotion(PromotionInfo promotion);
         public abstract IDataReader SetPromotion(PromotionInfo promotion);

@@ -138,6 +138,9 @@
     <Content Include="Backend\Product\ProductCategoryList.aspx" />
     <Content Include="Backend\Product\ProductEdit.aspx" />
     <Content Include="Backend\Product\ProductList.aspx" />
+    <Content Include="Backend\Promotion\PromotionAdd.aspx" />
+    <Content Include="Backend\Promotion\PromotionEdit.aspx" />
+    <Content Include="Backend\Promotion\PromotionList.aspx" />
     <Content Include="Backend\User\UserAdd.aspx" />
     <Content Include="Backend\User\UserEdit.aspx" />
     <Content Include="Backend\User\UserList.aspx" />
@@ -363,6 +366,27 @@
     </Compile>
     <Compile Include="Backend\Product\ProductList.aspx.designer.cs">
       <DependentUpon>ProductList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Backend\Promotion\PromotionAdd.aspx.cs">
+      <DependentUpon>PromotionAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Backend\Promotion\PromotionAdd.aspx.designer.cs">
+      <DependentUpon>PromotionAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Backend\Promotion\PromotionEdit.aspx.cs">
+      <DependentUpon>PromotionEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Backend\Promotion\PromotionEdit.aspx.designer.cs">
+      <DependentUpon>PromotionEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Backend\Promotion\PromotionList.aspx.cs">
+      <DependentUpon>PromotionList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Backend\Promotion\PromotionList.aspx.designer.cs">
+      <DependentUpon>PromotionList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Backend\User\UserAdd.aspx.cs">
       <DependentUpon>UserAdd.aspx</DependentUpon>

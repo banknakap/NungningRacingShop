@@ -129,7 +129,7 @@ namespace NungningRacingShop.Backend.Product
                         string newNameImage = Guid.NewGuid().ToString();
                         file.SaveAs(System.IO.Path.Combine(Server.MapPath("~/Images/"), newNameImage + exttension));
 
-                        File.Delete(System.IO.Path.Combine(Server.MapPath("~/Images/"), txtImageName.Text));
+                        //File.Delete(System.IO.Path.Combine(Server.MapPath("~/Images/"), txtImageName.Text));
 
                         ProductImageInfo proi = new ProductImageInfo();
                         proi.image_id = txtImageId.Text;
