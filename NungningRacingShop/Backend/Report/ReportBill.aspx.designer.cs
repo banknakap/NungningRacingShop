@@ -7,55 +7,28 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace NungningRacingShop.Backend.Notice {
+namespace NungningRacingShop.Backend.Report {
     
     
-    public partial class NoticeAdd {
+    public partial class ReportBill {
         
         /// <summary>
-        /// txtTitle control.
+        /// txtStart control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTitle;
+        protected global::System.Web.UI.WebControls.TextBox txtStart;
         
         /// <summary>
-        /// txtDesciption control.
+        /// txtEnd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDesciption;
-        
-        /// <summary>
-        /// fileImage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fileImage;
-        
-        /// <summary>
-        /// listofuploadedfiles control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label listofuploadedfiles;
-        
-        /// <summary>
-        /// txtDisplaySort control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDisplaySort;
+        protected global::System.Web.UI.WebControls.TextBox txtEnd;
         
         /// <summary>
         /// btnSend control.
@@ -65,5 +38,14 @@ namespace NungningRacingShop.Backend.Notice {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSend;
+        
+        /// <summary>
+        /// rptReport control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptReport;
     }
 }

@@ -141,6 +141,7 @@
     <Content Include="Backend\Promotion\PromotionAdd.aspx" />
     <Content Include="Backend\Promotion\PromotionEdit.aspx" />
     <Content Include="Backend\Promotion\PromotionList.aspx" />
+    <Content Include="Backend\Report\ReportBill.aspx" />
     <Content Include="Backend\User\UserAdd.aspx" />
     <Content Include="Backend\User\UserEdit.aspx" />
     <Content Include="Backend\User\UserList.aspx" />
@@ -387,6 +388,13 @@
     </Compile>
     <Compile Include="Backend\Promotion\PromotionList.aspx.designer.cs">
       <DependentUpon>PromotionList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Backend\Report\ReportBill.aspx.cs">
+      <DependentUpon>ReportBill.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Backend\Report\ReportBill.aspx.designer.cs">
+      <DependentUpon>ReportBill.aspx</DependentUpon>
     </Compile>
     <Compile Include="Backend\User\UserAdd.aspx.cs">
       <DependentUpon>UserAdd.aspx</DependentUpon>

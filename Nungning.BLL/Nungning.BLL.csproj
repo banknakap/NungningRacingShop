@@ -46,6 +46,7 @@
     <Compile Include="Controller\NoticeController.cs" />
     <Compile Include="Controller\ProductController.cs" />
     <Compile Include="Controller\PromotionController.cs" />
+    <Compile Include="Controller\ReportController.cs" />
     <Compile Include="Controller\UserController.cs" />
     <Compile Include="Controller\WebboardController.cs" />
     <Compile Include="Info\BillDetailInfo.cs" />
@@ -57,6 +58,7 @@
     <Compile Include="Info\ProductImageInfo.cs" />
     <Compile Include="Info\ProductInfo.cs" />
     <Compile Include="Info\PromotionInfo.cs" />
+    <Compile Include="Info\ReportHistoryInfo.cs" />
     <Compile Include="Info\TopicInfo.cs" />
     <Compile Include="Info\UserInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

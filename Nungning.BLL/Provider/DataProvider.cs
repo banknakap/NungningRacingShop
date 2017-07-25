@@ -128,5 +128,7 @@ namespace Nungning.BLL.Provider
         public abstract IDataReader SetPromotion(PromotionInfo promotion);
         public abstract IDataReader SearchPromotion(string promotion_id, string title);
         #endregion
+        public abstract IDataReader GetReportHistory(DateTime start_date, DateTime end_date);
+        
     }
 }

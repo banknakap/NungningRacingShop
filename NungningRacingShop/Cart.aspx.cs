@@ -103,22 +103,29 @@ namespace NungningRacingShop
             string user_name = (SessionApp.user_info == null) ? "No Login" : SessionApp.user_info.user_name;
 
             var promotion = PromotionController.GetPromotionByPromotionCode(txtPromotionCode.Text);
-            if (promotion == null)
+            if (!string.IsNullOrEmpty(txtPromotionCode.Text) && promotion == null)
             {
                 ShowMessage(Page, "ไม่พบโปรโมชั่นนี้");
                 return;
             }
             float discount = 0;
-            if (promotion.promotion_type == 1)
+            string promotion_id = null;
+            if (promotion != null)
             {
-                discount = (total_price / 100) * promotion.discount_percent;
-            }
-            if (promotion.promotion_type == 2)
-            {
-                discount = promotion.discount_value;
+                if (promotion.promotion_type == 1)
+                {
+                    discount = (total_price / 100) * promotion.discount_percent;
+                }
+                if (promotion.promotion_type == 2)
+                {
+                    discount = promotion.discount_value;
+                }
+                promotion_id = promotion.promotion_id;
             }
 
-            var bill = BillController.AddBill(user_infoid, total_price - discount, txtAddress.Text, promotion.promotion_id, total_price, user_name);
+            
+
+            var bill = BillController.AddBill(user_infoid, total_price - discount, txtAddress.Text, promotion_id, total_price, user_name);
             List<BillDetailInfo> bills = new List<BillDetailInfo>();
             foreach (var c in currentCart)
             {
@@ -128,18 +135,21 @@ namespace NungningRacingShop
 
 
 
-            if (promotion.promotion_type == 3)
+            if (promotion != null)
             {
-                var product = ProductController.GetProduct(promotion.free_product_id, null);
-
-                if (product == null)
+                if (promotion.promotion_type == 3)
                 {
-                    ShowMessage(Page, "ไม่พบรายการของแถม");
-                    return;
+                    var product = ProductController.GetProduct(promotion.free_product_id, null);
+
+                    if (product == null)
+                    {
+                        ShowMessage(Page, "ไม่พบรายการของแถม");
+                        return;
+                    }
+                    var currentPro = product[0];
+                    var resultBill = BillController.AddBillDetail(bill.bill_id, currentPro.product_id, promotion.free_amount, 0, user_name); ;
+                    bills.Add(resultBill);
                 }
-                var currentPro = product[0];
-                var resultBill = BillController.AddBillDetail(bill.bill_id, currentPro.product_id, promotion.free_amount, 0, user_name); ;
-                bills.Add(resultBill);
             }
 
             var billInfo = BillController.GetBill(bill.bill_id, user_infoid);
@@ -150,7 +160,14 @@ namespace NungningRacingShop
                 contentMail += "<br/> หมายเลขใบเสร็จที่ : " + currentBill.bill_code.ToString("000000#");
                 contentMail += "<br/> ท่านสามารถเข้าดูรายการซื้อขายได้ที่ : <a href='http://www.nungningracingshop.com/Bill/BillDetail?bill_id=" + currentBill.bill_id + "'> คลิกที่นี่ </a>";
                 contentMail += "<br/><br/> ขอขอบพระคุณท่านลูกค้าที่อุดหนุนร้าน NungNingRacingShop";
-                MailController.sendEmail(SessionApp.user_info.email, "รายการสั่งซื้อ", contentMail);
+                try
+                {
+                    MailController.sendEmail(SessionApp.user_info.email, "รายการสั่งซื้อ", contentMail);
+                }
+                catch
+                {
+
+                }
                 RedirectTo("~/Bill/BillDetail?bill_id=" + currentBill.bill_id);
             }
 

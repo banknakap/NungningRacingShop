@@ -514,5 +514,13 @@ namespace Nungning.DAL
         }
 
         #endregion
+
+        public override IDataReader GetReportHistory(DateTime start_date, DateTime end_date)
+        {
+            return SqlHelper.ExecuteReader(ConnectionString, GetFullyQualifiedName("usp_Report_GetReportHistory")
+             , GetNull(start_date)
+              , GetNull(end_date)
+             );
+        }
     }
 }

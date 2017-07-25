@@ -16,6 +16,7 @@ namespace NungningRacingShop
     {
 
         public float total_price = 0;
+        public float net_price = 0;
         private string bill_id
         {
             set
@@ -58,6 +59,8 @@ namespace NungningRacingShop
             pReceiptCode.InnerText = "หมายเลขใบเสร็จ : " + current.bill_code.ToString("000000#");
             pCreateDate.InnerText = "วันที่ซื้อ : " + current.create_date.ToString("dd MM yyyy HH:mm:ss");
             total_price = current.total_price;
+            if (current.net_price >= 0)
+                net_price = current.net_price;
         }
 
         private void bindBillDetail()

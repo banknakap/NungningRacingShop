@@ -35,12 +35,13 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/Backend/Product/ProductList">จัดการสินค้า</a></li>
-                        <li><a runat="server" href="~/Backend/Product/ProductCategoryList">จัดการหมวดหมู่</a></li>
-                        <li><a runat="server" href="~/Backend/Notice/NoticeList">จัดการประกาศ</a></li>
-                        <li><a runat="server" href="~/Backend/User/UserList">จัดการสมาชิก</a></li>
-                        <li><a runat="server" href="~/Backend/Webboard/TopicList">จัดการเว็บบอร์ด</a></li>
-                        <li><a runat="server" href="~/Backend/Promotion/PromotionList">จัดการโปรโมชั่น</a></li>
+                        <li><a runat="server" href="~/Backend/Product/ProductList">สินค้า</a></li>
+                        <li><a runat="server" href="~/Backend/Product/ProductCategoryList">หมวดหมู่</a></li>
+                        <li><a runat="server" href="~/Backend/Notice/NoticeList">ประกาศ</a></li>
+                        <li><a runat="server" href="~/Backend/User/UserList">สมาชิก</a></li>
+                        <li><a runat="server" href="~/Backend/Webboard/TopicList">เว็บบอร์ด</a></li>
+                        <li><a runat="server" href="~/Backend/Promotion/PromotionList">โปรโมชั่น</a></li>
+                        <li><a runat="server" href="~/Backend/Report/ReportBill">รายงาน</a></li>
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">

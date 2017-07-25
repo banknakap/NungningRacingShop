@@ -67,15 +67,6 @@ namespace NungningRacingShop.Backend.Notice {
         protected global::System.Web.UI.WebControls.HiddenField imgName;
         
         /// <summary>
-        /// txtUrl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUrl;
-        
-        /// <summary>
         /// txtDisplaySort control.
         /// </summary>
         /// <remarks>
@@ -83,24 +74,6 @@ namespace NungningRacingShop.Backend.Notice {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDisplaySort;
-        
-        /// <summary>
-        /// ddlLinkPage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlLinkPage;
-        
-        /// <summary>
-        /// txtLinkParam control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtLinkParam;
         
         /// <summary>
         /// btnSend control.

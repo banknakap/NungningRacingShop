@@ -35,9 +35,9 @@
 
     <h1 align="center">NungNing RacingShop</h1>
     <div style="width: 50%; margin: 0 auto;">
-        <p>One Microsoft Way</p>
-        <p>Redmond, WA 98052-6399</p>
-        <p>P: 425.555.0100 </p>
+        <p>Tel 086-3818938, 086-8889499</p>
+        <p>www.facebook.com/ning.racing</p>
+        <p>line : onispoiler</p>
 
     </div>
 
@@ -90,7 +90,14 @@
             </tr>
         </ItemTemplate>
         <FooterTemplate>
+            <tr>
 
+                <td style="width: 61%;"></td>
+                <td align="center" style="width: 5%;">ส่วนลด</td>
+                <td align="right" style="width: 20%;color:red;">
+                    <p><%# (net_price - total_price).ToString("#,##0.##") %></p>
+                </td>
+            </tr>
             <tr>
 
                 <td style="width: 61%;"></td>
@@ -104,5 +111,5 @@
         </FooterTemplate>
     </asp:Repeater>
 
-   
+
 </asp:Content>

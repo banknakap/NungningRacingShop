@@ -11,6 +11,7 @@ namespace Nungning.BLL.Info
         public string bill_id { get; set; }
         public long bill_code { get; set; }
         public float total_price { get; set; }
+        public float net_price { get; set; }
         public string address { get; set; }
         public string promotion_id { get; set; }
         public DateTime create_date { get; set; }

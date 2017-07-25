@@ -39,18 +39,18 @@
         <asp:Image ID="imgNotice" runat="server" style="height:128px;" /> 
         <asp:HiddenField ID="imgName" runat="server" />
         <br>
-        <label>url: <span class="red">*</span> </label>
-        <asp:TextBox  ID="txtUrl" CssClass="form-control" runat="server"></asp:TextBox>
+        <%--<label>url: <span cl<%--ass="red">*</span> </label>--%>
+        <%--<asp:TextBox  ID="txtUrl" CssClass="form-control" runat="server"></asp:TextBox>--%>
            <label>เรียงลำดับ: <span class="red">*</span> </label>
         <asp:TextBox  ID="txtDisplaySort" CssClass="form-control" runat="server"></asp:TextBox>
 
-          <label>LinkPage <span style="color: red;">*</span> </label>
+<%--          <label>LinkPage <span style="color: red;">*</span> </label>
         <br>
         <asp:DropDownList ID="ddlLinkPage" runat="server">
         </asp:DropDownList>
         <br>
            <label>LinkParam: <span class="red">*</span> </label>
-        <asp:TextBox  ID="txtLinkParam" CssClass="form-control" runat="server"></asp:TextBox>
+        <asp:TextBox  ID="txtLinkParam" CssClass="form-control" runat="server"></asp:TextBox>--%>
 
     </div>
 

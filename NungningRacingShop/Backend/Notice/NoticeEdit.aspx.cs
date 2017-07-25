@@ -41,23 +41,23 @@ namespace NungningRacingShop.Backend.Notice
             {
                 if (string.IsNullOrEmpty(notice_id))
                     return;
-                bindDllLinkPage();
+                //bindDllLinkPage();
                 bindNotice();
             }
 
         }
-        private const string UnSelected = "------- กรุณาเลือก ---------";
-        private void bindDllLinkPage()
-        {
-            var result = LinkPageController.GetLinkPage(null);
-            ddlLinkPage.DataSource = result;
-            ddlLinkPage.DataValueField = "link_page";
-            ddlLinkPage.DataTextField = "description";
-            ddlLinkPage.DataBind();
-            ddlLinkPage.Items.Insert(0, new ListItem(UnSelected, "0"));
+        //private const string UnSelected = "------- กรุณาเลือก ---------";
+        //private void bindDllLinkPage()
+        //{
+        //    var result = LinkPageController.GetLinkPage(null);
+        //    ddlLinkPage.DataSource = result;
+        //    ddlLinkPage.DataValueField = "link_page";
+        //    ddlLinkPage.DataTextField = "description";
+        //    ddlLinkPage.DataBind();
+        //    ddlLinkPage.Items.Insert(0, new ListItem(UnSelected, "0"));
 
 
-        }
+        //}
 
         protected void btnSend_Click(object sender, EventArgs e)
         {
@@ -100,14 +100,14 @@ namespace NungningRacingShop.Backend.Notice
                 notice.image = imgName.Value;
             }
 
-            notice.url = txtUrl.Text;
+            //notice.url = txtUrl.Text;
             int display;
             int.TryParse(txtDisplaySort.Text, out display);
             notice.display_sort = display;
             notice.create_by = (SessionApp.user_info == null) ? "No Login" : SessionApp.user_info.user_name;
             notice.lastupdate_by = (SessionApp.user_info == null) ? "No Login" : SessionApp.user_info.user_name;
-            notice.link_page = int.Parse(ddlLinkPage.SelectedValue);
-            notice.link_param = txtLinkParam.Text;
+            //notice.link_page = int.Parse(ddlLinkPage.SelectedValue);
+            //notice.link_param = txtLinkParam.Text;
 
             var result = NoticeController.SetNotice(notice);
 
@@ -134,8 +134,8 @@ namespace NungningRacingShop.Backend.Notice
                 txtDesciption.Text = current[0].description;
                 imgNotice.ImageUrl = getImage(current[0].image);
                 txtDisplaySort.Text = current[0].display_sort.ToString();
-                ddlLinkPage.SelectedValue = current[0].link_page.ToString();
-                txtLinkParam.Text = current[0].link_param;
+                //ddlLinkPage.SelectedValue = current[0].link_page.ToString();
+                //txtLinkParam.Text = current[0].link_param;
 
                 imgName.Value = current[0].image;
             }
