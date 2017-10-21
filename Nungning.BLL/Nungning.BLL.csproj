@@ -51,6 +51,7 @@
     <Compile Include="Controller\WebboardController.cs" />
     <Compile Include="Info\BillDetailInfo.cs" />
     <Compile Include="Info\BillInfo.cs" />
+    <Compile Include="Info\BillPaymentInfo.cs" />
     <Compile Include="Info\CommentInfo.cs" />
     <Compile Include="Info\LinkPageInfocs.cs" />
     <Compile Include="Info\NoticeInfo.cs" />

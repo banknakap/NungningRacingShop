@@ -7,63 +7,63 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace NungningRacingShop {
+namespace NungningRacingShop.Bill {
     
     
-    public partial class BillDetail {
+    public partial class BillPayment {
         
         /// <summary>
-        /// paymentContent control.
+        /// txtDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl paymentContent;
+        protected global::System.Web.UI.WebControls.TextBox txtDate;
         
         /// <summary>
-        /// pReceiptCode control.
+        /// txtTime control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl pReceiptCode;
+        protected global::System.Web.UI.WebControls.TextBox txtTime;
         
         /// <summary>
-        /// pAddress control.
+        /// txtPaymentPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl pAddress;
+        protected global::System.Web.UI.WebControls.TextBox txtPaymentPrice;
         
         /// <summary>
-        /// pCreateDate control.
+        /// txtPaymentName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl pCreateDate;
+        protected global::System.Web.UI.WebControls.TextBox txtPaymentName;
         
         /// <summary>
-        /// rptBillDetail control.
+        /// fileImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptBillDetail;
+        protected global::System.Web.UI.WebControls.FileUpload fileImage;
         
         /// <summary>
-        /// payment control.
+        /// btnSend control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor payment;
+        protected global::System.Web.UI.WebControls.Button btnSend;
     }
 }

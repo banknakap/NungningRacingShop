@@ -17,7 +17,7 @@ namespace NungningRacingShop
 
         public float total_price = 0;
         public float net_price = 0;
-        private string bill_id
+        public string bill_id
         {
             set
             {
@@ -28,6 +28,8 @@ namespace NungningRacingShop
                 return (string)ViewState["bill_id"];
             }
         }
+        public string contentPayment = "";
+        public static string bill_id_payment;
 
         public override bool requirelogin()
         {
@@ -40,13 +42,28 @@ namespace NungningRacingShop
         protected void Page_Load(object sender, EventArgs e)
         {
             bill_id = Request.QueryString["bill_id"];
+            payment.HRef = "~/Bill/BillPayment?bill_id=" + bill_id;
             if (!IsPostBack)
             {
                 if (SessionApp.user_info == null || string.IsNullOrEmpty(bill_id))
                     return;
+                bindBillPayment();
                 bindBill();
                 bindBillDetail();
+                
             }
+        }
+
+        private void bindBillPayment()
+        {
+            var res = BillController.GetBillPayment(bill_id);
+            if (res.Count > 0)
+            {
+                var c = res[0];
+                if (c.payment_time != null)
+                    paymentContent.InnerText = "ท่านได้มีการชำระมาแล้วเงินยอดที่ " + c.payment_price.ToString("#,###") + " เวลา " + c.payment_time;
+            }
+            
         }
 
         private void bindBill()
@@ -61,6 +78,8 @@ namespace NungningRacingShop
             total_price = current.total_price;
             if (current.net_price >= 0)
                 net_price = current.net_price;
+            else
+                net_price = current.total_price;
         }
 
         private void bindBillDetail()

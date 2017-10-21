@@ -72,7 +72,6 @@
 
                         <tr>
                             <td><%# Container.ItemIndex %></td>
-                            <td><%# Eval("image") %></td>
                             <td></td>
                             <td><img ="100" src="<%# getImage(Eval("image").ToString()) %>" style="height:128px;"/></td>
                             <td>

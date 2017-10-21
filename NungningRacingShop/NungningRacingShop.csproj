@@ -142,6 +142,7 @@
     <Content Include="Backend\Promotion\PromotionEdit.aspx" />
     <Content Include="Backend\Promotion\PromotionList.aspx" />
     <Content Include="Backend\Report\ReportBill.aspx" />
+    <Content Include="Backend\Report\ReportBillPayment.aspx" />
     <Content Include="Backend\User\UserAdd.aspx" />
     <Content Include="Backend\User\UserEdit.aspx" />
     <Content Include="Backend\User\UserList.aspx" />
@@ -151,6 +152,9 @@
     <Content Include="Backend\Webboard\TopicList.aspx" />
     <Content Include="Bill\BillDetail.aspx" />
     <Content Include="Bill\BillHistoryList.aspx" />
+    <Content Include="Bill\BillPayment.aspx" />
+    <Content Include="Bill\ConfirmBill.aspx" />
+    <Content Include="Bill\TestNewPage.aspx" />
     <Content Include="Cart.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
@@ -396,6 +400,13 @@
     <Compile Include="Backend\Report\ReportBill.aspx.designer.cs">
       <DependentUpon>ReportBill.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Backend\Report\ReportBillPayment.aspx.cs">
+      <DependentUpon>ReportBillPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Backend\Report\ReportBillPayment.aspx.designer.cs">
+      <DependentUpon>ReportBillPayment.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Backend\User\UserAdd.aspx.cs">
       <DependentUpon>UserAdd.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -458,6 +469,27 @@
     </Compile>
     <Compile Include="Bill\BillHistoryList.aspx.designer.cs">
       <DependentUpon>BillHistoryList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bill\BillPayment.aspx.cs">
+      <DependentUpon>BillPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bill\BillPayment.aspx.designer.cs">
+      <DependentUpon>BillPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bill\ConfirmBill.aspx.cs">
+      <DependentUpon>ConfirmBill.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bill\ConfirmBill.aspx.designer.cs">
+      <DependentUpon>ConfirmBill.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bill\TestNewPage.aspx.cs">
+      <DependentUpon>TestNewPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bill\TestNewPage.aspx.designer.cs">
+      <DependentUpon>TestNewPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Cart.aspx.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
@@ -569,6 +601,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Images\" />
+    <Folder Include="PaymentImages\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

@@ -61,7 +61,7 @@ namespace NungningRacingShop
                     string path = Request.Url.PathAndQuery.ToString();
                     string return_path = path.Replace("~/", "");
                     //RedirectTo("~"+ return_path);
-                    RedirectTo("~~/.aspx");
+                    RedirectTo("~/");
                 }
             }
             catch (Exception ex)

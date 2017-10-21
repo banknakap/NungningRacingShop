@@ -15,6 +15,10 @@ namespace Nungning.BLL.Info
         public string address { get; set; }
         public string promotion_id { get; set; }
         public DateTime create_date { get; set; }
-        public string create_by { get; set; }
+
+        //extra
+        public string first_name { get; set; }
+        public string last_name { get; set; }
+
     }
 }

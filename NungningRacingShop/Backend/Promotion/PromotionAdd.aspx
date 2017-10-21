@@ -41,6 +41,8 @@
         <asp:TextBox ID="txtDiscountPercent" CssClass="form-control" runat="server" onkeypress="return isNumeric(event);"></asp:TextBox>
         <label>ส่วนลดราคาเต็ม: </label>
         <asp:TextBox ID="txtDiscountValue" CssClass="form-control" runat="server" onkeypress="return isNumeric(event);"></asp:TextBox>
+        <label>ราคาซื้อครบกำหนดถึงจะได้รับส่วนลด: </label>
+        <asp:TextBox ID="txtCompletePrice" CssClass="form-control" runat="server" onkeypress="return isNumeric(event);"></asp:TextBox>
         <label>รหัสสินค้าที่แถม: </label>
         <asp:TextBox ID="txtFreeProductId" CssClass="form-control" runat="server"></asp:TextBox>
         <label>จำนวนที่แถม: </label>

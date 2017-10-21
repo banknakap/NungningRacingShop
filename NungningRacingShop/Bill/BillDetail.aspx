@@ -33,12 +33,12 @@
         }
     </style>
 
-    <h1 align="center">NungNing RacingShop</h1>
+    <h1 align="center">NungNing RacingShop </h1>
     <div style="width: 50%; margin: 0 auto;">
         <p>Tel 086-3818938, 086-8889499</p>
         <p>www.facebook.com/ning.racing</p>
         <p>line : onispoiler</p>
-
+        <p>โอนเงินได้ที่ TMB : 215-2-67671-0 ชื่อบัญชี น.ส. สาวิตรี แฝดสูงเนิน</p>
     </div>
 
     <hr style="width: 70%" />
@@ -47,7 +47,7 @@
         <tbody>
             <tr>
 
-                <td style="width: 61%;"></td>
+                <td style="width: 61%;"> <p style="color:red;" id="paymentContent" runat="server"></p></td>
                 <td align="right" style="width: 20%;">
                     <p id="pReceiptCode" runat="server"></p>
                 </td>
@@ -74,6 +74,7 @@
                         <th scope="col">ชื่อสินค้า</th>
                         <th align="left" scope="col">จำนวน</th>
                         <th align="center" scope="col">ราคาต่อหน่วย</th>
+                         <th align="center" scope="col">ราคารวม</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -86,13 +87,16 @@
                     <%# Eval("title") %>
                 </td>
                 <td align="center" style="width: 5%;"><%# Eval("amount") %></td>
+                 <td align="right" style="width: 15%;"><%# (int.Parse(Eval("sum_price").ToString())/float.Parse(Eval("amount").ToString())) %></td>
                 <td align="right" style="width: 20%;"><%# Eval("sum_price").Equals("0.") ? "-" : Eval("sum_price", "{0:#,#0.##}") %></td>
+               
             </tr>
         </ItemTemplate>
         <FooterTemplate>
             <tr>
 
                 <td style="width: 61%;"></td>
+                <td align="center" style="width: 15%;"></td>
                 <td align="center" style="width: 5%;">ส่วนลด</td>
                 <td align="right" style="width: 20%;color:red;">
                     <p><%# (net_price - total_price).ToString("#,##0.##") %></p>
@@ -101,6 +105,7 @@
             <tr>
 
                 <td style="width: 61%;"></td>
+                <td align="center" style="width: 15%;"></td>
                 <td align="center" style="width: 5%;">ราคาสุทธิ</td>
                 <td align="right" style="width: 20%;">
                     <p><%# total_price.ToString("#,##0.##") %></p>
@@ -109,7 +114,8 @@
             </tbody>
                 </table>
         </FooterTemplate>
-    </asp:Repeater>
-
+    </asp:Repeater> 
+   
+    <a class="btn btn-default btn-lg submit-btn" id="payment" runat="server" href='#'>แจ้งชำระเงินได้ที่นี่</a>
 
 </asp:Content>

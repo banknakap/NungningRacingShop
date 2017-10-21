@@ -24,5 +24,6 @@ namespace Nungning.BLL.Info
         public string description { get; set; }
         public string image { get; set; }
         public bool is_del { get; set; }
+        public float complete_price { get; set; }
     }
 }

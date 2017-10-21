@@ -99,6 +99,9 @@ namespace Nungning.BLL.Provider
         public abstract IDataReader AddBillDetail(string bill_id, string product_id, int amount, float sum_price, string create_by);
         public abstract IDataReader GetBill(string bill_id,string user_infoid);
         public abstract IDataReader GetBillDetail(string bill_detail_id, string bill_id);
+        public abstract IDataReader GetBillPayment(string bill_id);
+        public abstract IDataReader AddBillPayment(string bill_id, string payment_time, float payment_price, string create_by, string payment_account, string payment_name, string payment_image);
+        public abstract IDataReader GetBillUnConfirm(string bill_id, string user_infoid);
         #endregion
 
         #region Notice

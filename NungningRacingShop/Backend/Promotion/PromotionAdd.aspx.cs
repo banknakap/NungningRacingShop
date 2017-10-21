@@ -77,7 +77,13 @@ namespace NungningRacingShop.Backend.Promotion
             int free;
             int.TryParse(txtFreeAmount.Text, out free);
 
-           promotion.free_amount = free;
+
+            float completePrice;
+            float.TryParse(txtCompletePrice.Text, out completePrice);
+
+            promotion.complete_price = completePrice;
+
+            promotion.free_amount = free;
             promotion.title = txtTitle.Text;
             promotion.description = txtDesciption.Text;
 

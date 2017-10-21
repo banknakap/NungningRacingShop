@@ -110,17 +110,23 @@ namespace NungningRacingShop
             }
             float discount = 0;
             string promotion_id = null;
+            float totalprice_cart = currentCart.Sum(c => c.sum_price);
+
+           
             if (promotion != null)
             {
-                if (promotion.promotion_type == 1)
+                if (totalprice_cart >= promotion.complete_price)
                 {
-                    discount = (total_price / 100) * promotion.discount_percent;
+                    if (promotion.promotion_type == 1)
+                    {
+                        discount = (total_price / 100) * promotion.discount_percent;
+                    }
+                    if (promotion.promotion_type == 2)
+                    {
+                        discount = promotion.discount_value;
+                    }
+                    promotion_id = promotion.promotion_id;
                 }
-                if (promotion.promotion_type == 2)
-                {
-                    discount = promotion.discount_value;
-                }
-                promotion_id = promotion.promotion_id;
             }
 
             

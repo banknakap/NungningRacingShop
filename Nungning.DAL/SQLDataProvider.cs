@@ -326,6 +326,15 @@ namespace Nungning.DAL
                 , GetNull(user_infoid)
                 );
         }
+        public override IDataReader GetBillUnConfirm(string bill_id, string user_infoid)
+        {
+            return SqlHelper.ExecuteReader(ConnectionString, GetFullyQualifiedName("usp_Bill_GetBillUnConfirm")
+                , GetNull(bill_id)
+                , GetNull(user_infoid)
+                );
+        }
+
+        
 
         public override IDataReader GetBillDetail(string bill_detail_id, string bill_id)
         {
@@ -334,6 +343,28 @@ namespace Nungning.DAL
                 , GetNull(bill_id)
                 );
         }
+
+        public override IDataReader GetBillPayment(string bill_id)
+        {
+            return SqlHelper.ExecuteReader(ConnectionString, GetFullyQualifiedName("usp_Bill_GetBillPayment")
+                ,GetNull(bill_id)
+                );
+        }
+
+
+        public override IDataReader AddBillPayment(string bill_id, string payment_time, float payment_price, string create_by, string payment_account, string payment_name,string payment_image)
+        {
+            return SqlHelper.ExecuteReader(ConnectionString, GetFullyQualifiedName("usp_Bill_AddBillPayment")
+                , GetNull(bill_id)
+                , GetNull(payment_time)
+                , GetNull(payment_price)
+                , GetNull(create_by)
+                , GetNull(payment_account)
+                , GetNull(payment_name)
+                , GetNull(payment_image)
+                );
+        }
+
 
 
 
@@ -486,6 +517,7 @@ namespace Nungning.DAL
             , GetNull(promotion.title)
             , GetNull(promotion.description)
             , GetNull(promotion.image)
+            , GetNull(promotion.complete_price)
             );
         }
         public override IDataReader SetPromotion(PromotionInfo promotion)
@@ -503,6 +535,7 @@ namespace Nungning.DAL
             , GetNull(promotion.description)
             , GetNull(promotion.image)
             , GetNull(promotion.is_del)
+            , GetNull(promotion.complete_price)
             );
         }
         public override IDataReader SearchPromotion(string promotion_id, string title)

@@ -41,7 +41,7 @@
         <a runat="server" href="~/Authentication/Register">สมัครสมาชิกใหม่</a>
         <br />
         <asp:Button ID="btnSend" runat="server" Text="ล็อคอิน" CssClass="btn btn-success btn-mg submit-btn" OnClick="btnSend_Click" />
-        <asp:Button ID="btmCancel" runat="server" Text="ยกเลิก" CssClass="btn btn-default btn-mg submit-btn" OnClick="btnSend_Click" />
+        <asp:Button ID="btmCancel" runat="server" Text="ยกเลิก" CssClass="btn btn-default btn-mg submit-btn" />
 
     </div>
 </asp:Content>

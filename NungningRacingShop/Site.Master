@@ -65,9 +65,9 @@
                         <li><a runat="server" href="~/Webboard/TopicList">เว็บบอร์ด</a></li>
                         <%--<li><a runat="server" href="~/About">เกี่ยวกับ</a></li>--%>
                         <li><a runat="server" href="~/Contact">ติดต่อ</a></li>
-
+                        <li><a runat="server" href="~/Bill/ConfirmBill">แจ้งชำระเงิน</a></li>
                     </ul>
-
+                    
                     <div id="div_login" runat="server">
                         <ul class="nav navbar-nav navbar-right">
 

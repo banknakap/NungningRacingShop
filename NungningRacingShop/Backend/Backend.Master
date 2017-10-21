@@ -41,7 +41,8 @@
                         <li><a runat="server" href="~/Backend/User/UserList">สมาชิก</a></li>
                         <li><a runat="server" href="~/Backend/Webboard/TopicList">เว็บบอร์ด</a></li>
                         <li><a runat="server" href="~/Backend/Promotion/PromotionList">โปรโมชั่น</a></li>
-                        <li><a runat="server" href="~/Backend/Report/ReportBill">รายงาน</a></li>
+                        <li><a runat="server" href="~/Backend/Report/ReportBill">รายงานใบเสร็จ</a></li>
+                          <li><a runat="server" href="~/Backend/Report/ReportBillPayment">รายงานแจ้งชำระเงิน</a></li>
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">

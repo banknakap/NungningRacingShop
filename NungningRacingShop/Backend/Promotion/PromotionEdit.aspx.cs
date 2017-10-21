@@ -96,6 +96,11 @@ namespace NungningRacingShop.Backend.Promotion
             int free;
             int.TryParse(txtFreeAmount.Text, out free);
 
+            float completePrice;
+            float.TryParse(txtCompletePrice.Text, out completePrice);
+
+            promotion.complete_price = completePrice;
+
             promotion.free_amount = free;
             promotion.title = txtTitle.Text;
             promotion.description = txtDesciption.Text;
@@ -152,6 +157,8 @@ namespace NungningRacingShop.Backend.Promotion
                     txtDesciption.Text = current.description;
                     imgPromotion.ImageUrl = getImage(current.image);
                     imgName.Value = current.image;
+
+                    txtCompletePrice.Text = current.complete_price.ToString();
                 }
             }
             

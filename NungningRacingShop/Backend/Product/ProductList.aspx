@@ -19,7 +19,7 @@
         </asp:DropDownList>
         <br>
     
-    <asp:Button ID="btnSend" runat="server" Text="ค้นหา" CssClass="btn btn-success btn-lg submit-btn" OnClick="btnSend_Click" />
+    <asp:Button ID="btnSend" runat="server" Text="ค้นหา" CssClass="btn btn-default btn-lg submit-btn" OnClick="btnSend_Click" />
     <a class="btn btn-default btn-lg submit-btn" runat="server" href="~/Backend/Product/ProductAdd">เพิ่มสินค้า</a>
 
       <asp:Repeater ID="rptProducts" runat="server" OnItemCommand="rptProducts_ItemCommand">
