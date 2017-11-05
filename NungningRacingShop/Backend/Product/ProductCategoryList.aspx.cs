@@ -44,7 +44,7 @@ namespace NungningRacingShop.Backend.Product
                         RedirectTo("~/Backend/Product/ProductCategoryEdit.aspx" + "?product_category_id=" + product_category_id);
                         break;
                     case "PRODUCT_CATE_DEL":
-                        ProductController.DelProduct(product_category_id, true);
+                        ProductController.DelProductCategory(product_category_id, true);
                         break;
                     default:
                         break;

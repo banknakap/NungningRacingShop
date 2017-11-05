@@ -29,7 +29,7 @@
                 <ItemTemplate>
 
                     <tr>
-                        <td><%# Container.ItemIndex %></td>
+                        <td><%# Container.ItemIndex+1 %></td>
                         <td><%# Eval("title") %></td>
                         <td><%# Eval("description") %></td>
                             <td>

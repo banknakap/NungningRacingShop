@@ -27,14 +27,7 @@
             return false;
         }
     </script>
-    <style>
-        .custom-file-upload {
-    border: 1px solid #ccc;
-    display: inline-block;
-    padding: 6px 12px;
-    cursor: pointer;
-}
-    </style>
+
     <div>
         <div class="panel panel-default">
             <div class="panel-heading">แก้ไขสินค้า</div>
@@ -71,7 +64,7 @@
                     <ItemTemplate>
 
                         <tr>
-                            <td><%# Container.ItemIndex %></td>
+                            <td><%# Container.ItemIndex+1 %></td>
                             <td></td>
                             <td><img ="100" src="<%# getImage(Eval("image").ToString()) %>" style="height:128px;"/></td>
                             <td>
@@ -82,12 +75,6 @@
                             <td>
                                 <asp:LinkButton ID="lnkImageDel" runat="server" CssClass="btn btn-danger btn-lg submit-btn" CommandName="PROIMAGE_DEL"
                                     CommandArgument='<%# Eval("image_id") %>' ToolTip="ลบภาพ" Font-Underline="true" OnClientClick="return confirm('คุณต้องการลบรูปภาพจริงหรือไม่ จริงหรือไม่');">ลบรูปภาพ</asp:LinkButton>
-                            </td>
-                            <td>
-                                <label class="custom-file-upload">
-    <input type="file" style="display:none;"/>
-    Custom Upload
-</label>
                             </td>
                         </tr>
                     </ItemTemplate>
